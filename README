@@ -1,0 +1,10 @@
+helpers:
+	ft_nbrlen
+
+min lenght:
+float - minimun length 6 precision after the decimal dot
+	 .6
+	 minimun 8 = 0.000000
+
+int - minimun length 1
+	ft_putnbr with ft_nbrlen will make it work

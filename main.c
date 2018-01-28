@@ -6,7 +6,7 @@
 /*   By: gmalpart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/24 21:10:39 by gmalpart          #+#    #+#             */
-/*   Updated: 2018/01/27 13:56:15 by regien           ###   ########.fr       */
+/*   Updated: 2018/01/28 01:06:45 by gmalpart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,38 @@ int	ft_printf(char const *str, ...)
 			ft_putchar(str[i]);
 	}
 	va_end(arguments);
-	return (e);
+	return (i + e);
 }
 
 int main (void)
 {
 	int cac = 5;
+	float vaina = 0;
+	char *str = "pendejada";
+	char *algo;
+	char letra = 'p';
+	char vacia;
+
+	int flags = -45;
+
+
 	ft_printf("asdfg %d\n", cac);
-	printf("%i\n", printf("qewadszcx"));
+	printf("integer = |%i|\n", printf("qewadszcx"));
+	printf("float = |%f|\n", vaina); 
+	printf("string = |%s|\n", str);
+	
+	printf("------------------ Strings Cases -----------------------\n\n");
+	ft_printf("vacio = |%s|\n", algo);
+	ft_printf(" total = |%d|\n", ft_printf("my stuff = |%s|", str));
+
+	printf("------------------ Characters Cases -----------------------\n\n");
+	printf("char = |%c|\n", letra);
+	printf("char = |%%|\n");
+	printf("mine\n");
+	ft_printf("char = |%c|\n", letra);
+	ft_printf("char = |%%|\n");
+//	printf("char vacio = |%c|\n", vacia);
+//	printf("char vacio = |%d|\n", vacia);
+	printf("------------------ Characters Cases -----------------------\n\n");
+	printf("weird integers = |%+d|", flags);
 }
