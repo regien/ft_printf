@@ -6,11 +6,90 @@
 /*   By: gmalpart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/28 00:06:40 by gmalpart          #+#    #+#             */
-/*   Updated: 2018/01/28 00:37:35 by gmalpart         ###   ########.fr       */
+/*   Updated: 2018/01/28 07:42:13 by gmalpart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+char	hexstr[] = "0123456789abcdef";
+char	caphexstr[] = "0123456789ABCDEF";
+
+//			HEXADECIMAL PRINT
+
+void	f_hexa(va_list arguments, int *e)
+{
+	unsigned int	hold;
+
+	hold = va_arg(arguments, unsigned int);
+	print_hexa(hold, e);
+	*e = *e - 2;
+}
+
+void	print_hexa(unsigned int nbr, int *e)
+{
+	if (nbr > 15)
+	{
+		print_hexa(nbr / 16, e);
+		print_hexa(nbr % 16, e);
+	}
+	else
+	{
+		*e = *e + 1;
+		ft_putchar(hexstr[nbr]);
+	}
+}
+
+void	f_caphexa(va_list arguments, int *e)
+{
+	unsigned int	hold;
+
+	hold = va_arg(arguments, unsigned int);
+	print_caphexa(hold, e);
+	*e = *e - 2;
+}
+
+void	print_caphexa(unsigned int nbr, int *e)
+{
+	if (nbr > 15)
+	{
+		print_caphexa(nbr / 16, e);
+		print_caphexa(nbr % 16, e);
+	}
+	else
+	{
+		*e = *e + 1;
+		ft_putchar(caphexstr[nbr]);
+	}
+}
+
+//			POINTER ADDRESS
+
+
+void	f_pointadrs(va_list arguments, int *e)
+{
+	void	*out;
+	unsigned long	adr;
+	
+	out = va_arg(arguments, void*);
+	adr = (unsigned long)out;
+	ft_putstr("0x");
+	print_address(adr, e);
+}
+
+void	print_address(unsigned long adr, int *e)
+{
+	if(adr > 15)
+	{
+		print_address(adr / 16, e);
+		print_address(adr % 16, e);
+	}
+	else
+	{
+		*e = *e + 1;
+		ft_putchar(hexstr[adr]);
+	}
+}
 
 
 // CHAR - Single one
@@ -32,6 +111,7 @@ void	f_per(int *e)
 	ft_putchar('%');
 	*e = ((*e + 1) - 2);
 }
+
 
 // CHAR STRING
 
