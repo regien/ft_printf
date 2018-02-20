@@ -1,3 +1,5 @@
+MAKEFILE IS NOT FULLY OPTIMAZED
+
 helpers:
 	ft_nbrlen
 
@@ -8,3 +10,8 @@ float - minimun length 6 precision after the decimal dot
 
 int - minimun length 1
 	ft_putnbr with ft_nbrlen will make it work
+
+flags
+	int:	d /i /u / o;
+	char:	s / c / hexas x / hexacap X / pointer address p; 
+	special: %;

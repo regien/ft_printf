@@ -31,6 +31,9 @@ void		flags_pen(int *i, char const *str, va_list arguments, int *e)
 // pointer adr
 	str[*i] == 'p' ? f_pointadrs(arguments, e) : 0;
 
+// 
+//	str[*i] == 'c' ? f_pointadrs(arguments, e) : 0;
+
 	//str[*i] == 'S' ? f_capstr(argumens, e) : 0;
 }
 

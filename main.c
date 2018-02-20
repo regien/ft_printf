@@ -6,7 +6,7 @@
 /*   By: gmalpart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/24 21:10:39 by gmalpart          #+#    #+#             */
-/*   Updated: 2018/01/29 14:53:08 by gmalpart         ###   ########.fr       */
+/*   Updated: 2018/02/19 18:19:32 by regien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ int main (void)
 	ft_putchar('\n');
 	printf("mine\n");
 	ft_printf("char = |%c|\n", letra);
+	ft_printf("char = |%C|\n", letra);
 	ft_printf("char = |%%%%%%|\n");
 	printf("hexadecimal = |%x|\n", flags);
 	ft_printf("hexadecimal = |%x|\n", flags);
