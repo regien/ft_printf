@@ -99,6 +99,19 @@ int main (void)
 	printf("integer = |%hi|\n", (unsigned short)flags3);
 	ft_printf("integer = |%hi|\n", (unsigned short)flags3);
 	
+	printf("------------------ Integer l Cases -----------------------\n\n");
+
+	printf("hexa = |%lx|\n", (unsigned long)flags3);
+	ft_printf("hexa = |%lx|\n", (unsigned long)flags3);
+	printf("HEXA = |%lX|\n", (unsigned long)flags3);
+	ft_printf("HEXA = |%lX|\n", (unsigned long)flags3);
+	printf("Uint = |%lu|\n", (unsigned long)flags3);
+	ft_printf("uint = |%lu|\n", (unsigned long)flags3);
+	printf("Octal = |%lo|\n", (unsigned long)flags3);
+	ft_printf("OCtal = |%lo|\n", (unsigned long)flags3);
+	printf("integer = |%ld|\n", (long)flags3);
+	ft_printf("integer = |%ld|\n", (long)flags3);
+
 	printf("------------------ Strings Cases -----------------------\n\n");
 	ft_printf("vacio = |%s|\n", algo);
 	ft_printf(" total = |%d|\n", ft_printf("my stuff = |%s|", str));

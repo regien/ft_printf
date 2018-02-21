@@ -33,6 +33,7 @@ int		ft_printf(char const *str, ...);
 void		flags_pen(int *i, char const *str, va_list arguments, int *e);
 void		flag_parshh(int *i, char const *str, va_list arg, int *e);
 void		flag_parsh(int *i, char const *str, va_list arg, int *e);
+void		flag_parsl(int *i, char const *str, va_list arg, int *e);
 
 void		f_int(va_list args, int *e);
 void		ft_putnbrcont(long long nbr, int *e);
@@ -99,5 +100,15 @@ void    f_hhexacap(va_list args, int *e);
 void    f_hoctal(va_list args, int *e);
 void    f_huint(va_list args, int *e);
 void    f_hint(va_list args, int *e);
+
+/*
+**  L Conversions
+*/
+
+void    f_lhexa(va_list args, int *e);
+void    f_lhexacap(va_list args, int *e);
+void    f_loctal(va_list args, int *e);
+void    f_luint(va_list args, int *e);
+void    f_lint(va_list args, int *e);
 
 #endif
