@@ -138,6 +138,6 @@ void		ft_putnbrbase(long long nbr, int base, int *e)
 	if (nbr < 10)
 	{
 		*e = *e + 1;
-		ft_putchar(hexlen[nbr]);
+		ft_putchar(hexstr[nbr]);
 	}
 }
