@@ -15,10 +15,10 @@
 void		flag_parsh(int *i, char const *str, va_list arg, int *e)	
 {
 	*i = *i + 1;
-//	str[*i] == 'd' ? f_hint(arg, e) : 0;
-//	str[*i] == 'i' ? f_hint(arg, e) : 0;
-//	str[*i] == 'u' ? f_huint(arg, e) : 0;
-//	str[*i] == 'o' ? f_hoctal(arg, e) : 0;
+	str[*i] == 'd' ? f_hint(arg, e) : 0;
+	str[*i] == 'i' ? f_hint(arg, e) : 0;
+	str[*i] == 'u' ? f_huint(arg, e) : 0;
+	str[*i] == 'o' ? f_hoctal(arg, e) : 0;
 	str[*i] == 'x' ? f_hhexa(arg, e) : 0;
 	str[*i] == 'X' ? f_hhexacap(arg, e) : 0;
 }

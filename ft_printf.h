@@ -89,11 +89,15 @@ void	f_hhuint(va_list args, int *e);
 void	f_hhint(va_list args, int *e);
 
 /*
-**  HH Conversions
+**  H Conversions
 */
 
 void    f_hhexa(va_list args, int *e);
 
 void    f_hhexacap(va_list args, int *e);
+
+void    f_hoctal(va_list args, int *e);
+void    f_huint(va_list args, int *e);
+void    f_hint(va_list args, int *e);
 
 #endif

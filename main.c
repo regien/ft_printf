@@ -90,6 +90,14 @@ int main (void)
 	ft_printf("hexa = |%hx|\n", (unsigned short)flags3);
 	printf("hexa = |%hX|\n", (unsigned short)flags3);
 	ft_printf("hexa = |%hX|\n", (unsigned short)flags3);
+	printf("hexa = |%ho|\n", (unsigned short)flags3);
+	ft_printf("hexa = |%ho|\n", (unsigned short)flags3);
+	printf("uint = |%hu|\n", (unsigned short)flags3);
+	ft_printf("uint = |%hu|\n", (unsigned short)flags3);
+	printf("d flag = |%hd|\n", (unsigned short)flags3);
+	ft_printf("d flag = |%hd|\n", (unsigned short)flags3);
+	printf("integer = |%hi|\n", (unsigned short)flags3);
+	ft_printf("integer = |%hi|\n", (unsigned short)flags3);
 	
 	printf("------------------ Strings Cases -----------------------\n\n");
 	ft_printf("vacio = |%s|\n", algo);

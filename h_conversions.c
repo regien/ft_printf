@@ -13,7 +13,8 @@
 #include "ft_printf.h"
 
 //void	print_hexa(unsigned int nbr, int *e)
-
+// i basically did not change anything just reuse the function from the
+// general part but with differents castings.
 
 void    f_hhexa(va_list args, int *e)
 {
@@ -38,6 +39,24 @@ void    f_hoctal(va_list args, int *e)
     unsigned short  holder;
     
     holder = (unsigned short)va_arg(args, void*);
-    asd;
+    ft_putnbroct((unsigned int)holder, e);
+	*e = *e - 3;
+}
+
+void    f_huint(va_list args, int *e)
+{
+    unsigned short holder;
+
+    holder = (unsigned short)va_arg(args, void*);
+    ft_putnbruint(holder, e);
+	*e = *e - 3;
+}
+
+void    f_hint(va_list args, int *e)
+{
+    short   holder;
+
+    holder = (short)va_arg(args, void*);
+    ft_putnbrcont((long long)holder, e);
 	*e = *e - 3;
 }
