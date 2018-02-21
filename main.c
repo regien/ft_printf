@@ -45,9 +45,12 @@ int main (void)
 //	unsigned long out;
 	int flags = -45;
 	int flags2 = 45;
+	int flags3 = 15;
 	wchar_t wide = 0x061 << 1;	
+	wchar_t *stringwide = L"Hello world";
 
 //	out = (unsigned long)str;
+
 
 	printf("------------------ Integer Cases -----------------------\n\n");
 	printf("integer = |%i|\n", limit);
@@ -59,12 +62,27 @@ int main (void)
 	printf("octal = |%o|\n", valor);
 	ft_printf("octal = |%o|\n", valor);
 	printf("float = |%f|\n", vaina); 
-//	ft_printf("float = |%f|\n", vaina); 
-//	printf("string = |%s|\n", str);
+
+	printf("just checking printf values\n");
+	printf("ft_printf = |%d|\n", ft_printf("integer = |%i| ", limit)); 
+	ft_printf("printf = |%d|\n", printf("integer = |%i| ", limit));
 	
+	printf("------------------ Integer hh Cases -----------------------\n\n");
+
+	printf("integer = |%hhi|\n", (signed char)limit);
+//	ft_printf("integer = |%hhi|\n", limit);
+	printf("double = |%hhd|\n", (signed char)limit);
+//	ft_printf("double = |%hhd|\n", limit);
+	printf("HEXA = |%hhx|\n", (unsigned char)flags3);
+	ft_printf("HEXA = |%hhx|\n", (unsigned char)flags3);
+	printf("HEXA = |%hhX|\n", (unsigned char)flags3);
+	ft_printf("HEXA = |%hhX|\n", (unsigned char)flags3);
+
 	printf("------------------ Strings Cases -----------------------\n\n");
 	ft_printf("vacio = |%s|\n", algo);
 	ft_printf(" total = |%d|\n", ft_printf("my stuff = |%s|", str));
+	printf("string wide char = |%ls|\n", stringwide);
+	ft_printf("string wide char = |%ls|\n", stringwide);
 
 	printf("------------------ Characters Cases -----------------------\n\n");
 	printf("char = |%c|\n", letra);
@@ -77,6 +95,10 @@ int main (void)
 	ft_printf("char = |%%%%%%|\n");
 	printf("wide char = |%C|\n", wide);
 	ft_printf("wide char = |%C|\n", wide);
+	printf("lwide char = |%lc|\n", wide);
+	ft_printf("lwide char = |%lc|\n", wide);
+
+
 	printf("hexadecimal = |%x|\n", flags);
 	ft_printf("hexadecimal = |%x|\n", flags);
 	printf("hexadecimal = |%x|\n", flags2);

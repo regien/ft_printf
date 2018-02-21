@@ -28,6 +28,7 @@ int		ft_printf(char const *str, ...);
 ** parser
 */
 void		flags_pen(int *i, char const *str, va_list arguments, int *e);
+void		flag_parshh(int *i, char const *str, va_list arg, int *e);	
 void		f_int(va_list args, int *e);
 void		ft_putnbrcont(long long nbr, int *e);
 
@@ -54,11 +55,27 @@ void	print_hexa(unsigned int nbr, int *e);
 void	f_caphexa(va_list arguments, int *e);
 void	print_caphexa(unsigned int nbr, int *e);
 
+// wide chars
+void	f_widechar(const char *str, int *i, va_list arguments, int *e);
+void	ft_putstrwide(wchar_t *str, int *e);
+void	f_widestr(const char *str, int *i, va_list arguments, int *e);
 /*
 ** pointer adress
 */
 
 void	f_pointadrs(va_list arguments, int *e);
 void	print_address(unsigned long adr, int *e);
+
+/*
+**  HH Conversions
+*/
+
+void	f_hhhexa(va_list args, int *e);
+void	ft_puthhhexa(unsigned int nbr, int *e);
+
+void	ft_puthhhexacap(unsigned int nbr, int *e);
+void	f_hhhexacap(va_list args, int *e);
+
+
 
 #endif

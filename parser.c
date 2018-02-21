@@ -13,27 +13,39 @@
 #include "ft_printf.h"
 
 
-void		flags_pen(int *i, char const *str, va_list arguments, int *e)
+void		flag_parshh(int *i, char const *str, va_list arg, int *e)	
 {
-	*i = *i + 1;
-	str[*i] == 'd' ? f_int(arguments, e) : 0;
-	str[*i] == 'i' ? f_int(arguments, e) : 0;
-	str[*i] == 'u' ? f_uint(arguments, e) : 0;
-	str[*i] == 'o' ? f_octal(arguments, e) : 0;
-
-// strings
-	str[*i] == 's' ? f_str(arguments, e) : 0;
-
-	str[*i] == 'c' ? f_char(arguments, e) : 0;
-	str[*i] == '%' ? f_per(e) : 0;
-	str[*i] == 'x' ? f_hexa(arguments, e) : 0;
-	str[*i] == 'X' ? f_caphexa(arguments, e) : 0;
-// pointer adr
-	str[*i] == 'p' ? f_pointadrs(arguments, e) : 0;
-
-// 
-//	str[*i] == 'C' || (str[*i] == 'S' ) ? f_widechar(arguments, e) : 0;
-
-	//str[*i] == 'S' ? f_capstr(argumens, e) : 0;
+	*i = *i + 2;
+//	str[*i] == 'd' ? function : 0;
+//	str[*i] == 'i' ? function : 0;
+//	str[*i] == 'u' ? function : 0;
+//	str[*i] == 'o' ? function : 0;
+	str[*i] == 'x' ? f_hhhexa(arg, e) : 0;
+	str[*i] == 'X' ? f_hhhexacap(arg, e) : 0;
 }
 
+void		flags_pen(int *i, char const *str, va_list arg, int *e)
+{
+	*i = *i + 1;
+	str[*i] == 'd' ? f_int(arg, e) : 0;
+	str[*i] == 'i' ? f_int(arg, e) : 0;
+	str[*i] == 'u' ? f_uint(arg, e) : 0;
+	str[*i] == 'o' ? f_octal(arg, e) : 0;
+
+// strings
+	str[*i] == 's' ? f_str(arg, e) : 0;
+
+	str[*i] == 'c' ? f_char(arg, e) : 0;
+	str[*i] == '%' ? f_per(e) : 0;
+	str[*i] == 'x' ? f_hexa(arg, e) : 0;
+	str[*i] == 'X' ? f_caphexa(arg, e) : 0;
+// pointer adr
+	str[*i] == 'p' ? f_pointadrs(arg, e) : 0;
+
+// 
+	str[*i] == 'C' || str[*i] == 'S' ? f_widechar(str, i, arg, e) : 0;
+	str[*i] == 'l' && str[*i + 1] == 's' ? f_widestr(str, i, arg, e) : 0;
+	str[*i] == 'l' && str[*i + 1] == 'c' ? f_widechar(str, i, arg, e) : 0;
+	str[*i] == 'h' && str[*i + 1] == 'h' ? flag_parshh(i, str, arg, e) : 0;
+	//str[*i] == 'S' ? f_capstr(argumens, e) : 0;
+}

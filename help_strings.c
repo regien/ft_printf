@@ -135,10 +135,103 @@ void	print_str(char *str, int *e)
 }
 
 /// WIDE CHAR
-/*
-void	f_widechar(va_list arguments, int *e)
-{
-	
 
+void	f_widechar(const char *str, int *i, va_list arguments, int *e)
+{
+	void *holder;
+
+	if (str[*i] == 'C' || str[*i + 1] == 'c')
+	{
+		if (str[*i] == 'l')
+		{
+			*i = *i + 1;
+			*e = *e - 3;
+		}
+		else
+			*e = *e - 2;
+		holder = va_arg(arguments, void*);
+		*e = *e + 1;
+		ft_putchar((char)holder);
+	}
+	else
+		f_widestr(str, i, arguments, e);
 }
-*/
+
+void	ft_putstrwide(wchar_t *str, int *e)
+{
+		int i;
+
+		i = -1;
+		while (str[++i])
+		{
+			ft_putchar(str[i]);
+			*e = *e + 1;
+		}
+}
+
+void	f_widestr(const char *str, int *i, va_list arguments, int *e)
+{
+	wchar_t		*holder;
+
+	if (str[*i] ==  'S' || str[*i + 1] == 's')
+		{
+			if (str[*i] == 'l')
+			{
+				*i = *i + 1;
+				*e = *e - 3;
+			}
+			else
+				*e = *e - 2;
+			holder = va_arg(arguments, wchar_t*);
+			if (holder != NULL)
+				ft_putstrwide(holder, e);
+		}
+}
+
+/// ------------- HH CONVERSION ----------------
+
+
+void	ft_puthhhexa(unsigned int nbr, int *e)
+{
+	if (nbr > 15)
+	{
+		print_hexa(nbr / 16, e);
+		print_hexa(nbr % 16, e);
+	}
+	else
+	{
+		*e = *e + 1;
+		ft_putchar(hexstr[nbr]);
+	}
+}
+
+void	f_hhhexa(va_list args, int *e)
+{
+	unsigned char	holder;
+	
+	holder = (unsigned char)va_arg(args, void*);
+	ft_puthhhexa((unsigned int)holder, e);
+	*e = *e - 4;
+}
+
+void	ft_puthhhexacap(unsigned int nbr, int *e)
+{
+	if (nbr > 15)
+	{
+		print_hexa(nbr / 16, e);
+		print_hexa(nbr % 16, e);
+	}
+	else
+	{
+		*e = *e + 1;
+		ft_putchar(caphexstr[nbr]);
+	}
+}
+void	f_hhhexacap(va_list args, int *e)
+{
+	unsigned char	holder;
+	
+	holder = (unsigned char)va_arg(args, void*);
+	ft_puthhhexacap((unsigned int)holder, e);
+	*e = *e - 4;
+}
