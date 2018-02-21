@@ -45,6 +45,7 @@ int main (void)
 //	unsigned long out;
 	int flags = -45;
 	int flags2 = 45;
+	wchar_t wide = 0x061 << 1;	
 
 //	out = (unsigned long)str;
 
@@ -73,8 +74,9 @@ int main (void)
 	ft_putchar('\n');
 	printf("mine\n");
 	ft_printf("char = |%c|\n", letra);
-	ft_printf("char = |%C|\n", letra);
 	ft_printf("char = |%%%%%%|\n");
+	printf("wide char = |%C|\n", wide);
+	ft_printf("wide char = |%C|\n", wide);
 	printf("hexadecimal = |%x|\n", flags);
 	ft_printf("hexadecimal = |%x|\n", flags);
 	printf("hexadecimal = |%x|\n", flags2);
@@ -88,5 +90,9 @@ int main (void)
 //	printf("char vacio = |%c|\n", vacia);
 //	printf("char vacio = |%d|\n", vacia);
 	printf("------------------ Padders Cases -----------------------\n\n");
-	printf("weird integers = |%+2d|\n", flags);
+	printf("weird integers  minus= |%-40d|\n", flags);
+	printf("weird integers  plus = |%+40d|\n", flags);
+	printf("weird integers  plus = |% 40d|\n", flags);
+	printf("weird integers  minus= |% -40d|\n", flags);
+	printf("weird integers  minus= |%+09d|\n", flags);
 }

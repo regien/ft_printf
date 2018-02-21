@@ -6,7 +6,7 @@
 /*   By: gmalpart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/27 17:00:02 by gmalpart          #+#    #+#             */
-/*   Updated: 2018/01/29 14:44:22 by gmalpart         ###   ########.fr       */
+/*   Updated: 2018/01/29 15:35:51 by gmalpart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,6 +117,7 @@ void		ft_putnbrcont(long long nbr, int *e)
 
 
 // PUTNBR BASE
+// refactorize it wit everything that is above in order to shorten the code
 
 char	hexlen[] = "0123456789abcdef";
 //char	caphexstr[] = "0123456789ABCDEF";

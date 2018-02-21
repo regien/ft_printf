@@ -6,7 +6,7 @@
 /*   By: gmalpart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/24 21:11:12 by gmalpart          #+#    #+#             */
-/*   Updated: 2018/01/29 14:38:37 by gmalpart         ###   ########.fr       */
+/*   Updated: 2018/01/29 15:50:41 by gmalpart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdarg.h>
 # include <stdlib.h>
 # include "libft/includes/libft.h"
-
+# include <wchar.h>
 
 /*
 ** main

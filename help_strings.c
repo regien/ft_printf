@@ -6,7 +6,7 @@
 /*   By: gmalpart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/28 00:06:40 by gmalpart          #+#    #+#             */
-/*   Updated: 2018/01/28 07:42:13 by gmalpart         ###   ########.fr       */
+/*   Updated: 2018/01/29 15:00:09 by gmalpart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,3 +133,12 @@ void	print_str(char *str, int *e)
 	else
 		ft_putstr("(null)");
 }
+
+/// WIDE CHAR
+/*
+void	f_widechar(va_list arguments, int *e)
+{
+	
+
+}
+*/
