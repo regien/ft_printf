@@ -62,9 +62,12 @@ void	f_hhhexacap(va_list args, int *e)
 	*e = *e - 4;
 }
 
+
+
+// RECENT CHANGE	21 - 11:22 PM 
 void		ft_puthhoctal(unsigned int hold, int *e)
 {
-	if (hold >= 10)
+	if (hold > 7)
 	{
 		ft_puthhoctal(hold / 8, e);
 		ft_puthhoctal(hold % 8, e);

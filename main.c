@@ -112,11 +112,26 @@ int main (void)
 	printf("integer = |%ld|\n", (long)flags3);
 	ft_printf("integer = |%ld|\n", (long)flags3);
 
+	printf("------------------ Integer ll Cases -----------------------\n\n");
+
+	printf("hexa = |%llx|\n", (unsigned long long)flags3);
+	ft_printf("hexa = |%llx|\n", (unsigned long long)flags3);
+	printf("HEXA = |%llX|\n", (unsigned long long)flags3);
+	ft_printf("HEXA = |%llX|\n", (unsigned long long)flags3);
+	printf("octal = |%llo|\n", (unsigned long long)flags3);
+	ft_printf("octal = |%llo|\n", (unsigned long long)flags3);
+	printf("uint = |%llu|\n", (unsigned long long)flags3);
+	ft_printf("uint = |%llu|\n", (unsigned long long)flags3);
+	printf("dint = |%lld|\n", (long long)flags3);
+	ft_printf("dint = |%lld|\n", (long long)flags3);
+
 	printf("------------------ Strings Cases -----------------------\n\n");
 	ft_printf("vacio = |%s|\n", algo);
 	ft_printf(" total = |%d|\n", ft_printf("my stuff = |%s|", str));
 	printf("string wide char = |%ls|\n", stringwide);
 	ft_printf("string wide char = |%ls|\n", stringwide);
+	printf("string without l wide char = |%S|\n", stringwide);
+	ft_printf("string without l wide char = |%S|\n", stringwide);
 
 	printf("------------------ Characters Cases -----------------------\n\n");
 	printf("char = |%c|\n", letra);

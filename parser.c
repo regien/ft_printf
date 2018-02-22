@@ -45,6 +45,17 @@ void		flag_parsl(int *i, char const *str, va_list arg, int *e)
 	str[*i] == 'X' ? f_lhexacap(arg, e) : 0;
 }
 
+void		flag_parsll(int *i, char const *str, va_list arg, int *e)
+{
+	*i = *i + 2;
+	str[*i] == 'd' ? f_llint(arg, e) : 0;
+	str[*i] == 'i' ? f_llint(arg, e) : 0;
+	str[*i] == 'u' ? f_lluint(arg, e) : 0;
+	str[*i] == 'o' ? f_lloctal(arg, e) : 0;
+	str[*i] == 'x' ? f_llhexa(arg, e) : 0;
+	str[*i] == 'X' ? f_llhexacap(arg, e) : 0;
+}
+
 void		flags_pen(int *i, char const *str, va_list arg, int *e)
 {
 	*i = *i + 1;
@@ -70,5 +81,6 @@ void		flags_pen(int *i, char const *str, va_list arg, int *e)
 	str[*i] == 'h' && str[*i + 1] == 'h' ? flag_parshh(i, str, arg, e) : 0;
 	str[*i] == 'h' && str[*i + 1] != 'h' ? flag_parsh(i, str, arg, e) : 0;
 	str[*i] == 'l' && str[*i + 1] != 'l' ? flag_parsl(i, str, arg, e) : 0;
+	str[*i] == 'l' && str[*i + 1] == 'l' ? flag_parsll(i, str, arg, e) : 0;
 	//str[*i] == 'S' ? f_capstr(argumens, e) : 0;
 }

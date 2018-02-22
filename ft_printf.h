@@ -34,6 +34,7 @@ void		flags_pen(int *i, char const *str, va_list arguments, int *e);
 void		flag_parshh(int *i, char const *str, va_list arg, int *e);
 void		flag_parsh(int *i, char const *str, va_list arg, int *e);
 void		flag_parsl(int *i, char const *str, va_list arg, int *e);
+void		flag_parsll(int *i, char const *str, va_list arg, int *e);
 
 void		f_int(va_list args, int *e);
 void		ft_putnbrcont(long long nbr, int *e);
@@ -110,5 +111,28 @@ void    f_lhexacap(va_list args, int *e);
 void    f_loctal(va_list args, int *e);
 void    f_luint(va_list args, int *e);
 void    f_lint(va_list args, int *e);
+
+/*
+**  LL Conversions
+*/
+
+void	ft_putllhexa(unsigned long long nbr, int *e);
+void    f_llhexa(va_list args, int *e);
+
+void	ft_putllhexacap(unsigned long long nbr, int *e);
+void    f_llhexacap(va_list args, int *e);
+
+void	ft_putlloctal(unsigned long long nbr, int *e);
+void    f_lloctal(va_list args, int *e);
+
+void	ft_putlluint(unsigned long long nbr, int *e);
+void    f_lluint(va_list args, int *e);
+
+void	ft_putllint(long long nbr, int *e);
+void    f_llint(va_list args, int *e);
+
+/*
+**  PENDEJADAS
+*/
 
 #endif
