@@ -17,19 +17,23 @@ int	ft_printf(char const *str, ...)
 	int		i;
 	int		e;
 	va_list		arguments;
-	
+	t_total	*total;
 
-	e = 0;
+	total = ft_memalloc(sizeof(t_total));
+	total->e = 0;
+	total->wd = 0;
 	i = -1;
 	va_start(arguments, str);
 	while (str[++i])
 	{
 		if (str[i] == '%')
-			flags_pen(&i, str, arguments, &e);
+			flags_pen(&i, str, arguments, total);
 		else
 			ft_putchar(str[i]);
 	}
 	va_end(arguments);
+	e = total->e;
+	free (total);
 	return (i + e);
 }
 

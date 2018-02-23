@@ -17,16 +17,16 @@ char	caphexstr[] = "0123456789ABCDEF";
 
 //			HEXADECIMAL PRINT
 
-void	f_hexa(va_list arguments, int *e)
+void	f_hexa(va_list arguments, t_total *e)
 {
 	unsigned int	hold;
 
 	hold = va_arg(arguments, unsigned int);
 	print_hexa(hold, e);
-	*e = *e - 2;
+	e->e = e->e - 2;
 }
 
-void	print_hexa(unsigned int nbr, int *e)
+void	print_hexa(unsigned int nbr, t_total *e)
 {
 	if (nbr > 15)
 	{
@@ -35,21 +35,21 @@ void	print_hexa(unsigned int nbr, int *e)
 	}
 	else
 	{
-		*e = *e + 1;
+		e->e = e->e + 1;
 		ft_putchar(hexstr[nbr]);
 	}
 }
 
-void	f_caphexa(va_list arguments, int *e)
+void	f_caphexa(va_list arguments, t_total *e)
 {
 	unsigned int	hold;
 
 	hold = va_arg(arguments, unsigned int);
 	print_caphexa(hold, e);
-	*e = *e - 2;
+	e->e = e->e - 2;
 }
 
-void	print_caphexa(unsigned int nbr, int *e)
+void	print_caphexa(unsigned int nbr, t_total *e)
 {
 	if (nbr > 15)
 	{
@@ -58,7 +58,7 @@ void	print_caphexa(unsigned int nbr, int *e)
 	}
 	else
 	{
-		*e = *e + 1;
+		e->e = e->e + 1;
 		ft_putchar(caphexstr[nbr]);
 	}
 }
@@ -66,7 +66,7 @@ void	print_caphexa(unsigned int nbr, int *e)
 //			POINTER ADDRESS
 
 
-void	f_pointadrs(va_list arguments, int *e)
+void	f_pointadrs(va_list arguments, t_total *e)
 {
 	void	*out;
 	unsigned long	adr;
@@ -77,7 +77,7 @@ void	f_pointadrs(va_list arguments, int *e)
 	print_address(adr, e);
 }
 
-void	print_address(unsigned long adr, int *e)
+void	print_address(unsigned long adr, t_total *e)
 {
 	if(adr > 15)
 	{
@@ -86,7 +86,7 @@ void	print_address(unsigned long adr, int *e)
 	}
 	else
 	{
-		*e = *e + 1;
+		e->e = e->e + 1;
 		ft_putchar(hexstr[adr]);
 	}
 }
@@ -94,28 +94,28 @@ void	print_address(unsigned long adr, int *e)
 
 // CHAR - Single one
 
-void	f_char(va_list arguments, int *e)
+void	f_char(va_list arguments, t_total *e)
 {
 	char	hold;
 
 	hold = va_arg(arguments, int);
 	ft_putchar(hold);
 	if (hold <= 0)
-		*e = ((*e) - 2);
+		e->e = ((e->e) - 2);
 	else
-		*e = ((*e + 1) - 2);
+		e->e = ((e->e + 1) - 2);
 }
 // 			single  %
-void	f_per(int *e)
+void	f_per(t_total *e)
 {
 	ft_putchar('%');
-	*e = ((*e + 1) - 2);
+	e->e = ((e->e + 1) - 2);
 }
 
 
 // CHAR STRING
 
-void	f_str(va_list arguments, int *e)
+void	f_str(va_list arguments, t_total *e)
 {
 	char *str;
 
@@ -123,12 +123,12 @@ void	f_str(va_list arguments, int *e)
 	print_str(str, e);
 }
 
-void	print_str(char *str, int *e)
+void	print_str(char *str, t_total *e)
 {
 	if (str)
 	{
 		ft_putstr(str);
-		*e = ((*e + ft_strlen(str)) - 2);
+		e->e = ((e->e + ft_strlen(str)) - 2);
 	}
 	else
 		ft_putstr("(null)");
@@ -136,7 +136,7 @@ void	print_str(char *str, int *e)
 
 /// WIDE CHAR
 
-void	f_widechar(const char *str, int *i, va_list arguments, int *e)
+void	f_widechar(const char *str, int *i, va_list arguments, t_total *e)
 {
 	void *holder;
 
@@ -145,19 +145,19 @@ void	f_widechar(const char *str, int *i, va_list arguments, int *e)
 		if (str[*i] == 'l')
 		{
 			*i = *i + 1;
-			*e = *e - 3;
+			e->e = e->e - 3;
 		}
 		else
-			*e = *e - 2;
+			e->e = e->e - 2;
 		holder = va_arg(arguments, void*);
-		*e = *e + 1;
+		e->e = e->e + 1;
 		ft_putchar((char)holder);
 	}
 	else
 		f_widestr(str, i, arguments, e);
 }
 
-void	ft_putstrwide(wchar_t *str, int *e)
+void	ft_putstrwide(wchar_t *str, t_total *e)
 {
 		int i;
 
@@ -165,11 +165,11 @@ void	ft_putstrwide(wchar_t *str, int *e)
 		while (str[++i])
 		{
 			ft_putchar(str[i]);
-			*e = *e + 1;
+			e->e = e->e + 1;
 		}
 }
 
-void	f_widestr(const char *str, int *i, va_list arguments, int *e)
+void	f_widestr(const char *str, int *i, va_list arguments, t_total *e)
 {
 	wchar_t		*holder;
 
@@ -178,10 +178,10 @@ void	f_widestr(const char *str, int *i, va_list arguments, int *e)
 			if (str[*i] == 'l')
 			{
 				*i = *i + 1;
-				*e = *e - 3;
+				e->e = e->e - 3;
 			}
 			else
-				*e = *e - 2;
+				e->e = e->e - 2;
 			holder = va_arg(arguments, wchar_t*);
 			if (holder != NULL)
 				ft_putstrwide(holder, e);

@@ -16,7 +16,7 @@
 /// ------------- HH CONVERSION ----------------
 
 
-void	ft_puthhhexa(unsigned int nbr, int *e)
+void	ft_puthhhexa(unsigned int nbr, t_total *e)
 {
 	if (nbr > 15)
 	{
@@ -25,21 +25,21 @@ void	ft_puthhhexa(unsigned int nbr, int *e)
 	}
 	else
 	{
-		*e = *e + 1;
+		e->e = e->e + 1;
 		ft_putchar(hexstr[nbr]);
 	}
 }
 
-void	f_hhhexa(va_list args, int *e)
+void	f_hhhexa(va_list args, t_total *e)
 {
 	unsigned char	holder;
 	
 	holder = (unsigned char)va_arg(args, void*);
 	ft_puthhhexa((unsigned int)holder, e);
-	*e = *e - 4;
+	e->e = e->e - 4;
 }
 
-void	ft_puthhhexacap(unsigned int nbr, int *e)
+void	ft_puthhhexacap(unsigned int nbr, t_total *e)
 {
 	if (nbr > 15)
 	{
@@ -48,24 +48,24 @@ void	ft_puthhhexacap(unsigned int nbr, int *e)
 	}
 	else
 	{
-		*e = *e + 1;
+		e->e = e->e + 1;
 		ft_putchar(caphexstr[nbr]);
 	}
 }
 
-void	f_hhhexacap(va_list args, int *e)
+void	f_hhhexacap(va_list args, t_total *e)
 {
 	unsigned char	holder;
 	
 	holder = (unsigned char)va_arg(args, void*);
 	ft_puthhhexacap((unsigned int)holder, e);
-	*e = *e - 4;
+	e->e = e->e - 4;
 }
 
 
 
 // RECENT CHANGE	21 - 11:22 PM 
-void		ft_puthhoctal(unsigned int hold, int *e)
+void		ft_puthhoctal(unsigned int hold, t_total *e)
 {
 	if (hold > 7)
 	{
@@ -74,21 +74,21 @@ void		ft_puthhoctal(unsigned int hold, int *e)
 	}
 	else
 	{
-		*e = *e + 1;
+		e->e = e->e + 1;
 		ft_putchar(hold + '0');
 	}
 }
 
-void	f_hhoctal(va_list args, int *e)
+void	f_hhoctal(va_list args, t_total *e)
 {
 	unsigned char	holder;
 	
 	holder = (unsigned char)va_arg(args, void*);
 	ft_puthhoctal((unsigned int)holder, e);
-	*e = *e - 4;
+	e->e = e->e - 4;
 }
 
-void		ft_puthhuint(unsigned int nbr, int *e)
+void		ft_puthhuint(unsigned int nbr, t_total *e)
 {
 	if (nbr >= 10)
 	{
@@ -97,25 +97,25 @@ void		ft_puthhuint(unsigned int nbr, int *e)
 	}
 	else
 	{
-		*e = *e + 1;
+		e->e = e->e + 1;
 		ft_putchar(nbr + '0');
 	}
 }
 
-void	f_hhuint(va_list args, int *e)
+void	f_hhuint(va_list args, t_total *e)
 {
 	unsigned char	holder;
 
 	holder = (unsigned char)va_arg(args, void*);
 	ft_puthhuint((unsigned int)holder, e);
-	*e = *e - 4;
+	e->e = e->e - 4;
 }
 
-void	f_hhint(va_list args, int *e)
+void	f_hhint(va_list args, t_total *e)
 {
 	signed char	holder;
 
 	holder = (signed char)va_arg(args, void*);
 	ft_putnbrcont((long long)holder, e);
-	*e = *e - 4;
+	e->e = e->e - 4;
 }

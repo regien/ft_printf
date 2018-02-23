@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-void		flag_parsh(int *i, char const *str, va_list arg, int *e)	
+void		flag_parsh(int *i, char const *str, va_list arg, t_total *e)	
 {
 	*i = *i + 1;
 	str[*i] == 'd' ? f_hint(arg, e) : 0;
@@ -23,7 +23,7 @@ void		flag_parsh(int *i, char const *str, va_list arg, int *e)
 	str[*i] == 'X' ? f_hhexacap(arg, e) : 0;
 }
 
-void		flag_parshh(int *i, char const *str, va_list arg, int *e)	
+void		flag_parshh(int *i, char const *str, va_list arg, t_total *e)	
 {
 	*i = *i + 2;
 	str[*i] == 'd' ? f_hhint(arg, e) : 0;
@@ -34,7 +34,7 @@ void		flag_parshh(int *i, char const *str, va_list arg, int *e)
 	str[*i] == 'X' ? f_hhhexacap(arg, e) : 0;
 }
 
-void		flag_parsl(int *i, char const *str, va_list arg, int *e)
+void		flag_parsl(int *i, char const *str, va_list arg, t_total *e)
 {
 	*i = *i + 1;
 	str[*i] == 'd' ? f_lint(arg, e) : 0;
@@ -46,7 +46,7 @@ void		flag_parsl(int *i, char const *str, va_list arg, int *e)
 	// check some extra flags D O U
 }
 
-void		flag_parsll(int *i, char const *str, va_list arg, int *e)
+void		flag_parsll(int *i, char const *str, va_list arg, t_total *e)
 {
 	*i = *i + 2;
 	str[*i] == 'd' ? f_llint(arg, e) : 0;
@@ -57,7 +57,7 @@ void		flag_parsll(int *i, char const *str, va_list arg, int *e)
 	str[*i] == 'X' ? f_llhexacap(arg, e) : 0;
 }
 
-void		flag_parsz(int *i, char const *str, va_list arg, int *e)
+void		flag_parsz(int *i, char const *str, va_list arg, t_total *e)
 {
 	*i = *i + 1;
 	str[*i] == 'd' ? f_zint(arg, e) : 0;
@@ -68,7 +68,7 @@ void		flag_parsz(int *i, char const *str, va_list arg, int *e)
 	str[*i] == 'X' ? f_zhexacap(arg, e) : 0;
 }
 
-void		flag_parsj(int *i, char const *str, va_list arg, int *e)
+void		flag_parsj(int *i, char const *str, va_list arg, t_total *e)
 {
 	*i = *i + 1;
 	str[*i] == 'd' ? f_jint(arg, e) : 0;
@@ -79,13 +79,13 @@ void		flag_parsj(int *i, char const *str, va_list arg, int *e)
 	str[*i] == 'X' ? f_jhexacap(arg, e) : 0;
 }
 
-void		flag_space(int *i, char const *str, va_list arg, int *e)
+void		flag_space(int *i, char const *str, va_list arg, t_total *e)
 {
 	*i = *i + 1;
 //	str[*i] == ;
 }
 
-void		flags_pen(int *i, char const *str, va_list arg, int *e)
+void		flags_pen(int *i, char const *str, va_list arg, t_total *e)
 {
 	*i = *i + 1;
 	str[*i] == 'd' ? f_int(arg, e) : 0;

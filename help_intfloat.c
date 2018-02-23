@@ -33,16 +33,16 @@ void		f_doub(va_list arguments, int *e)
 
 // %o - OCTAL cases
 
-void		f_octal(va_list arguments, int *e)
+void		f_octal(va_list arguments, t_total *e)
 {
 	unsigned int	hold;
 
 	hold = va_arg(arguments, unsigned int);
 	ft_putnbroct(hold, e);
-	*e = *e - 2;
+	e->e = e->e - 2;
 }
 
-void		ft_putnbroct(unsigned int hold, int *e)
+void		ft_putnbroct(unsigned int hold, t_total *e)
 {
 	if (hold >= 10)
 	{
@@ -51,23 +51,23 @@ void		ft_putnbroct(unsigned int hold, int *e)
 	}
 	else
 	{
-		*e = *e + 1;
+		e->e = e->e + 1;
 		ft_putchar(hold + '0');
 	}
 }
 
 // UITENGERS cases
 
-void		f_uint(va_list arguments, int *e)
+void		f_uint(va_list arguments, t_total *e)
 {
 	unsigned int	nbr;
 
 	nbr = va_arg(arguments, unsigned int);
 	ft_putnbruint(nbr, e);
-	*e = *e - 2;
+	e->e = e->e - 2;
 }
 
-void		ft_putnbruint(unsigned int nbr, int *e)
+void		ft_putnbruint(unsigned int nbr, t_total *e)
 {
 	if (nbr >= 10)
 	{
@@ -76,14 +76,14 @@ void		ft_putnbruint(unsigned int nbr, int *e)
 	}
 	else
 	{
-		*e = *e + 1;
+		e->e = e->e + 1;
 		ft_putchar(nbr + '0');
 	}
 }
 
 // INTEGERS cases
 
-void		f_int(va_list args, int *e)
+void		f_int(va_list args, t_total *e)
 {
 	int	nbr;
 	long long hold;
@@ -91,14 +91,14 @@ void		f_int(va_list args, int *e)
 	nbr = va_arg(args, int);
 	hold = (long long)nbr;
 	ft_putnbrcont(nbr, e);
-	*e = *e - 2;
+	e->e = e->e - 2;
 }
 
-void		ft_putnbrcont(long long nbr, int *e)
+void		ft_putnbrcont(long long nbr, t_total *e)
 {
 	if (nbr < 0)
 	{
-		*e = *e + 1;
+		e->e = e->e + 1;
 		nbr = -nbr;
 		ft_putchar('-');
 	}
@@ -109,7 +109,7 @@ void		ft_putnbrcont(long long nbr, int *e)
 	}
 	if (nbr < 10)
 	{
-		*e = *e + 1;
+		e->e = e->e + 1;
 		ft_putchar(nbr + '0');
 	}
 }
@@ -122,11 +122,11 @@ void		ft_putnbrcont(long long nbr, int *e)
 char	hexlen[] = "0123456789abcdef";
 //char	caphexstr[] = "0123456789ABCDEF";
 
-void		ft_putnbrbase(long long nbr, int base, int *e)
+void		ft_putnbrbase(long long nbr, int base, t_total *e)
 {
 	if (nbr < 0)
 	{
-		*e = *e + 1;
+		e->e = e->e + 1;
 		ft_putchar('-');
 		nbr = nbr * -1;
 	}
@@ -137,7 +137,7 @@ void		ft_putnbrbase(long long nbr, int base, int *e)
 	}
 	if (nbr < 10)
 	{
-		*e = *e + 1;
+		e->e = e->e + 1;
 		ft_putchar(hexstr[nbr]);
 	}
 }
