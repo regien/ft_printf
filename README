@@ -15,3 +15,5 @@ flags
 	int:	d /i /u / o;
 	char:	s / c / hexas x / hexacap X / pointer address p; 
 	special: %;
+
+gcc -I libft/includes/ libft/*.c *.c -o test

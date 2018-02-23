@@ -33,7 +33,7 @@ int	ft_printf(char const *str, ...)
 	}
 	va_end(arguments);
 	e = total->e;
-	free (total);
+	free(total);
 	return (i + e);
 }
 
@@ -197,5 +197,8 @@ int main (void)
 	printf("weird integers  plus = |% 40d|\n", flags);
 	printf("weird integers  minus= |% -40d|\n", flags);
 	printf("weird integers  minus= |%+09d|\n", flags);
-	printf("weird integers  minus= |%Od|\n", flags);
+//	printf("weird integers  minus= |%O|\n", (unsigned int)flags);
+	ft_printf("weird integers  minus= |%O|\n", (unsigned int)flags);
+	ft_printf("weird integers  minus= |%U|\n", (unsigned int)flags);
+	ft_printf("weird integers  minus= |%D|\n", (unsigned int)flags);
 }

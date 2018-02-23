@@ -44,6 +44,7 @@ void		flag_parsl(int *i, char const *str, va_list arg, t_total *e)
 	str[*i] == 'x' ? f_lhexa(arg, e) : 0;
 	str[*i] == 'X' ? f_lhexacap(arg, e) : 0;
 	// check some extra flags D O U
+	
 }
 
 void		flag_parsll(int *i, char const *str, va_list arg, t_total *e)
@@ -85,6 +86,17 @@ void		flag_space(int *i, char const *str, va_list arg, t_total *e)
 //	str[*i] == ;
 }
 
+void		flags_extra(int *i, char const *str, va_list arg, t_total *e)
+{
+	e->e = e->e + 1;
+	if (str[*i] == 'D')
+		f_lint(arg, e);
+	else if (str[*i] == 'U')
+		f_luint(arg, e);
+	else if (str[*i] == 'O')
+		f_loctal(arg, e);
+}
+
 void		flags_pen(int *i, char const *str, va_list arg, t_total *e)
 {
 	*i = *i + 1;
@@ -105,7 +117,11 @@ void		flags_pen(int *i, char const *str, va_list arg, t_total *e)
 //
 	str[*i] == 'z' ? flag_parsz(i, str, arg, e) : 0;
 	str[*i] == 'j' ? flag_parsj(i, str, arg, e) : 0;
+	// currently working
 	str[*i] == ' ' ? flag_space(i, str, arg, e) : 0;
+
+	str[*i] == 'U' ? flags_extra(i, str, arg, e) : 0 ;
+	str[*i] == 'D' ||  str[*i] == 'O' ? flags_extra(i, str, arg, e) : 0;
 	str[*i] == 'C' || str[*i] == 'S' ? f_widechar(str, i, arg, e) : 0;
 	str[*i] == 'l' && str[*i + 1] == 's' ? f_widestr(str, i, arg, e) : 0;
 	str[*i] == 'l' && str[*i + 1] == 'c' ? f_widechar(str, i, arg, e) : 0;

@@ -48,6 +48,8 @@ void		flag_parsll(int *i, char const *str, va_list arg, t_total *e);
 void		flag_parsz(int *i, char const *str, va_list arg, t_total *e);
 void		flag_parsj(int *i, char const *str, va_list arg, t_total *e);
 
+void		flags_extra(int *i, char const *str, va_list arg, t_total *e);
+
 void		f_int(va_list args, t_total *e);
 void		ft_putnbrcont(long long nbr, t_total *e);
 
