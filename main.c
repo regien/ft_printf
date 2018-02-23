@@ -125,6 +125,32 @@ int main (void)
 	printf("dint = |%lld|\n", (long long)flags3);
 	ft_printf("dint = |%lld|\n", (long long)flags3);
 
+	printf("------------------ Integer z Cases -----------------------\n\n");
+
+	printf("hexa = |%zx|\n", (size_t)flags3);
+	ft_printf("hexa = |%zx|\n", (size_t)flags3);
+	printf("HEXA = |%zX|\n", (size_t)flags3);
+	ft_printf("HEXA = |%zX|\n", (size_t)flags3);
+	printf("octal = |%zo|\n", (size_t)flags3);
+	ft_printf("octal = |%zo|\n", (size_t)flags3);
+	printf("uint = |%zu|\n", (size_t)flags3);
+	ft_printf("uint = |%zu|\n", (size_t)flags3);
+	printf("int = |%zi|\n", (size_t)flags3);
+	ft_printf("int = |%zi|\n", (size_t)flags3);
+
+	printf("------------------ Integer j Cases -----------------------\n\n");
+
+	printf("hexa = |%jx|\n", (uintmax_t)flags3);
+	ft_printf("hexa = |%jx|\n", (uintmax_t)flags3);
+	printf("HEXA = |%jX|\n", (uintmax_t)flags3);
+	ft_printf("HEXA = |%jX|\n", (uintmax_t)flags3);
+	printf("octal = |%jo|\n", (uintmax_t)flags3);
+	ft_printf("octal = |%jo|\n", (uintmax_t)flags3);
+	printf("uint = |%ju|\n", (uintmax_t)flags3);
+	ft_printf("uint = |%ju|\n", (uintmax_t)flags3);
+	printf("int = |%ji|\n", (uintmax_t)flags3);
+	ft_printf("int = |%ji|\n", (uintmax_t)flags3);
+
 	printf("------------------ Strings Cases -----------------------\n\n");
 	ft_printf("vacio = |%s|\n", algo);
 	ft_printf(" total = |%d|\n", ft_printf("my stuff = |%s|", str));

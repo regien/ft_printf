@@ -43,6 +43,7 @@ void		flag_parsl(int *i, char const *str, va_list arg, int *e)
 	str[*i] == 'o' ? f_loctal(arg, e) : 0;
 	str[*i] == 'x' ? f_lhexa(arg, e) : 0;
 	str[*i] == 'X' ? f_lhexacap(arg, e) : 0;
+	// check some extra flags D O U
 }
 
 void		flag_parsll(int *i, char const *str, va_list arg, int *e)
@@ -54,6 +55,28 @@ void		flag_parsll(int *i, char const *str, va_list arg, int *e)
 	str[*i] == 'o' ? f_lloctal(arg, e) : 0;
 	str[*i] == 'x' ? f_llhexa(arg, e) : 0;
 	str[*i] == 'X' ? f_llhexacap(arg, e) : 0;
+}
+
+void		flag_parsz(int *i, char const *str, va_list arg, int *e)
+{
+	*i = *i + 1;
+	str[*i] == 'd' ? f_zint(arg, e) : 0;
+	str[*i] == 'i' ? f_zint(arg, e) : 0;
+	str[*i] == 'u' ? f_zuint(arg, e) : 0;
+	str[*i] == 'o' ? f_zoctal(arg, e) : 0;
+	str[*i] == 'x' ? f_zhexa(arg, e) : 0;
+	str[*i] == 'X' ? f_zhexacap(arg, e) : 0;
+}
+
+void		flag_parsj(int *i, char const *str, va_list arg, int *e)
+{
+	*i = *i + 1;
+	str[*i] == 'd' ? f_jint(arg, e) : 0;
+	str[*i] == 'i' ? f_jint(arg, e) : 0;
+	str[*i] == 'u' ? f_juint(arg, e) : 0;
+	str[*i] == 'o' ? f_joctal(arg, e) : 0;
+	str[*i] == 'x' ? f_jhexa(arg, e) : 0;
+	str[*i] == 'X' ? f_jhexacap(arg, e) : 0;
 }
 
 void		flags_pen(int *i, char const *str, va_list arg, int *e)
@@ -73,8 +96,9 @@ void		flags_pen(int *i, char const *str, va_list arg, int *e)
 	str[*i] == 'X' ? f_caphexa(arg, e) : 0;
 // pointer adr
 	str[*i] == 'p' ? f_pointadrs(arg, e) : 0;
-
-// 
+//
+	str[*i] == 'z' ? flag_parsz(i, str, arg, e) : 0;
+	str[*i] == 'j' ? flag_parsj(i, str, arg, e) : 0;
 	str[*i] == 'C' || str[*i] == 'S' ? f_widechar(str, i, arg, e) : 0;
 	str[*i] == 'l' && str[*i + 1] == 's' ? f_widestr(str, i, arg, e) : 0;
 	str[*i] == 'l' && str[*i + 1] == 'c' ? f_widechar(str, i, arg, e) : 0;

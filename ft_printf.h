@@ -17,6 +17,8 @@
 # include <stdlib.h>
 # include "libft/includes/libft.h"
 # include <wchar.h>
+# include <stdint.h>
+
 
 extern char	hexstr[];
 extern char	caphexstr[];
@@ -35,6 +37,8 @@ void		flag_parshh(int *i, char const *str, va_list arg, int *e);
 void		flag_parsh(int *i, char const *str, va_list arg, int *e);
 void		flag_parsl(int *i, char const *str, va_list arg, int *e);
 void		flag_parsll(int *i, char const *str, va_list arg, int *e);
+void		flag_parsz(int *i, char const *str, va_list arg, int *e);
+void		flag_parsj(int *i, char const *str, va_list arg, int *e);
 
 void		f_int(va_list args, int *e);
 void		ft_putnbrcont(long long nbr, int *e);
@@ -132,7 +136,29 @@ void	ft_putllint(long long nbr, int *e);
 void    f_llint(va_list args, int *e);
 
 /*
-**  PENDEJADAS
+**  Z conversions
 */
+
+void    f_zhexa(va_list args, int *e);
+void    f_zhexacap(va_list args, int *e);
+void    f_zoctal(va_list args, int *e);
+void    f_zuint(va_list args, int *e);
+void    f_zint(va_list args, int *e);
+
+/*
+** J conversions 
+*/
+
+void    f_jhexa(va_list args, int *e);
+void    f_jhexacap(va_list args, int *e);
+void    f_joctal(va_list args, int *e);
+void    f_juint(va_list args, int *e);
+void    f_jint(va_list args, int *e);
+
+/*
+**  PADDERS
+*/
+
+
 
 #endif
