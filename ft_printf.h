@@ -23,6 +23,14 @@
 extern char	hexstr[];
 extern char	caphexstr[];
 
+typedef struct     s_holder
+{
+//    int             *i;
+    int             width;
+    int             *e;
+}                   t_holder;
+
+
 /*
 ** main
 */

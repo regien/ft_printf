@@ -79,6 +79,12 @@ void		flag_parsj(int *i, char const *str, va_list arg, int *e)
 	str[*i] == 'X' ? f_jhexacap(arg, e) : 0;
 }
 
+void		flag_space(int *i, char const *str, va_list arg, int *e)
+{
+	*i = *i + 1;
+//	str[*i] == ;
+}
+
 void		flags_pen(int *i, char const *str, va_list arg, int *e)
 {
 	*i = *i + 1;
@@ -99,6 +105,7 @@ void		flags_pen(int *i, char const *str, va_list arg, int *e)
 //
 	str[*i] == 'z' ? flag_parsz(i, str, arg, e) : 0;
 	str[*i] == 'j' ? flag_parsj(i, str, arg, e) : 0;
+	str[*i] == ' ' ? flag_space(i, str, arg, e) : 0;
 	str[*i] == 'C' || str[*i] == 'S' ? f_widechar(str, i, arg, e) : 0;
 	str[*i] == 'l' && str[*i + 1] == 's' ? f_widestr(str, i, arg, e) : 0;
 	str[*i] == 'l' && str[*i + 1] == 'c' ? f_widechar(str, i, arg, e) : 0;
@@ -106,5 +113,5 @@ void		flags_pen(int *i, char const *str, va_list arg, int *e)
 	str[*i] == 'h' && str[*i + 1] != 'h' ? flag_parsh(i, str, arg, e) : 0;
 	str[*i] == 'l' && str[*i + 1] != 'l' ? flag_parsl(i, str, arg, e) : 0;
 	str[*i] == 'l' && str[*i + 1] == 'l' ? flag_parsll(i, str, arg, e) : 0;
-	//str[*i] == 'S' ? f_capstr(argumens, e) : 0;
+//	str[*i] == '' ? : 0;
 }

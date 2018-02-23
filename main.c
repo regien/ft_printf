@@ -17,6 +17,7 @@ int	ft_printf(char const *str, ...)
 	int		i;
 	int		e;
 	va_list		arguments;
+	
 
 	e = 0;
 	i = -1;
@@ -192,4 +193,5 @@ int main (void)
 	printf("weird integers  plus = |% 40d|\n", flags);
 	printf("weird integers  minus= |% -40d|\n", flags);
 	printf("weird integers  minus= |%+09d|\n", flags);
+	printf("weird integers  minus= |%Od|\n", flags);
 }
