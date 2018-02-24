@@ -194,11 +194,16 @@ int main (void)
 	printf("------------------ Padders Cases -----------------------\n\n");
 	printf("weird integers  minus= |%-40d|\n", flags);
 	printf("weird integers  plus = |%+40d|\n", flags);
+	printf("weird integers  plus = |%+d|\n", flags);
 	printf("weird integers  plus = |% 40d|\n", flags);
 	printf("weird integers  minus= |% -40d|\n", flags);
+	printf("weird testing thecero= |%040d|\n", flags);
+	printf("weird thecero with a+= |%0+40d|\n", flags);
 	printf("weird integers  minus= |%+09d|\n", flags);
-//	printf("weird integers  minus= |%O|\n", (unsigned int)flags);
-	ft_printf("weird integers  minus= |%O|\n", (unsigned int)flags);
-	ft_printf("weird integers  minus= |%U|\n", (unsigned int)flags);
-	ft_printf("weird integers  minus= |%D|\n", (unsigned int)flags);
+	printf("capital O = |%O|\n", (unsigned int)flags);
+	ft_printf("capital O = |%O|\n", (unsigned int)flags);
+	printf("capital U = |%U|\n", (unsigned int)flags);
+	ft_printf("capital U = |%U|\n", (unsigned int)flags);
+	printf("capital D = |%D|\n", (unsigned int)flags);
+	ft_printf("capital D = |%D|\n", (unsigned int)flags);
 }
