@@ -131,7 +131,7 @@ void		flags_pen(int *i, char const *str, va_list arg, t_total *e)
 	str[*i] == 'h' && str[*i + 1] != 'h' ? flag_parsh(i, str, arg, e) : 0;
 	str[*i] == 'l' && str[*i + 1] != 'l' ? flag_parsl(i, str, arg, e) : 0;
 	str[*i] == 'l' && str[*i + 1] == 'l' ? flag_parsll(i, str, arg, e) : 0;
-//	str[*i] == '0' ? flag_zero()
+//	str[*i] == '0' ? flag_zero() : 0;
 //	str[*i] == '' ? : 0;
 //	str[*i] > '0' && str[*i] <= '9' ? flag() : 0;
 	}

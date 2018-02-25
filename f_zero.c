@@ -12,4 +12,15 @@
 
 #include "ft_printf.h"
 
-//void
+
+
+
+void    f_zero(int *i, char const *str, va_list arg, t_total *e)
+{
+    e->wd = 0;
+    // flag + i think is not neccesary
+    while ()
+    {
+
+    }
+}

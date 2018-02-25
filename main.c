@@ -197,9 +197,11 @@ int main (void)
 	printf("weird integers  plus = |%+d|\n", flags);
 	printf("weird integers  plus = |% 40d|\n", flags);
 	printf("weird integers  minus= |% -40d|\n", flags);
+// flag zero interaction with + 
 	printf("weird testing thecero= |%040d|\n", flags);
 	printf("weird thecero with a+= |%0+40d|\n", flags);
 	printf("weird integers  minus= |%+09d|\n", flags);
+// this flags doesnt works on linux
 	printf("capital O = |%O|\n", (unsigned int)flags);
 	ft_printf("capital O = |%O|\n", (unsigned int)flags);
 	printf("capital U = |%U|\n", (unsigned int)flags);
