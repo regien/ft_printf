@@ -18,17 +18,19 @@
 **  fail with any ohter flag
 */
 
-long long     len_number(long long nbr, int base)
+int     len_number(int nbr, int base)
 {
-    long long   holder;
+    int   holder;
+    long    ringo;    
 
-    holder = 0;
-    if (nbr < 0)
+    ringo = nbr;
+    holder = 1;
+    if (ringo < 0)
     {
-        nbr = nbr * -1;
+        ringo = ringo * -1;
         holder++;
     }
-    while (nbr /= base)
+    while (ringo /= base)
         holder++;
     return (holder);
 }
@@ -39,9 +41,12 @@ void    f_putzeros(t_total *e, int size)
     int vaina;
     
     vaina = 0;
-    if (e->wd < size)
+ //       printf("\ne->wd = |%d| \n", e->wd);
+ //       printf("\nsize = |%d| \n", size);
+    if (e->wd > size)
     {
         vaina = e->wd - size;
+ //       printf("vaina = |%d| \n", vaina);
         while (--vaina >= 0)
         {
             ft_putchar('0');
@@ -50,28 +55,30 @@ void    f_putzeros(t_total *e, int size)
     }
 }
 
-
-
 void    f_zeroleft(int *i, const char *str, va_list arg, t_total *e)
 {
     void    *holder;
+    int     holdint;
 
     holder = va_arg(arg, void*);
+    holdint = (int)holder;
     if(str[*i] == 'd' || str[*i] == 'i')
     {
-       f_putzeros(e, (int)len_number((long long)holder, 10));
-       ft_putnbrbase((long long)holder, 10, e);
+       f_putzeros(e, len_number((int)holder, 10));
+       ft_putnbrbase((long long)holdint, 10, e);
     }
 }
 
 void    f_zero(int *i, char const *str, va_list arg, t_total *e)
 {
+
     e->wd = 0;
-    // flag + i think is not neccesary
+    // flag + suppose to be here,  i think is not neccesary
     while (str[*i] >= '0' && str[*i] <= '9')
     {
         if (str[*i] >= '0' && str[*i] <= '9')
             e->wd = (e->wd * 10) + (str[*i] - '0');
+//        printf("word count = |%d| \n", e->wd);
         *i += 1;
     }
     f_zeroleft(i, str, arg, e);

@@ -169,7 +169,7 @@ void    f_jint(va_list args, t_total *e);
 **  PADDERS
 */
 
-long long     len_number(long long nbr, int base);
+int     len_number(int nbr, int base);
 void    f_putzeros(t_total *e, int size);
 void    f_zeroleft(int *i, const char *str, va_list arg, t_total *e);
 void    f_zero(int *i, char const *str, va_list arg, t_total *e);

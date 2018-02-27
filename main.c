@@ -49,13 +49,14 @@ int main (void)
 	char vacia;
 //	unsigned long out;
 	int flags = -45;
+// changing momentanery because of malfunction negatives
+//	int flags = 45;
 	int flags2 = 45;
 	int flags3 = 250;
 	wchar_t wide = 0x061 << 1;	
 	wchar_t *stringwide = L"Hello world";
 
 //	out = (unsigned long)str;
-
 
 	printf("------------------ Integer Cases -----------------------\n\n");
 	printf("integer = |%i|\n", limit);
@@ -199,7 +200,7 @@ int main (void)
 	printf("weird integers  minus= |% -40d|\n", flags);
 // flag zero interaction with + 
 	printf("weird testing thecero= |%040d|\n", flags);
-	ft_printf("mine testing thecero= |%040d|\n", flags);
+	ft_printf("mine testing thecero = |%040d|\n", flags);
 	printf("weird thecero with a+= |%0+40d|\n", flags);
 	printf("weird integers  minus= |%+09d|\n", flags);
 // this flags doesnt works on linux

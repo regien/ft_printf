@@ -62,7 +62,6 @@ void    f_llhexacap(va_list args, t_total *e)
 	e->e = e->e - 4;
 }
 
-
 void	ft_putlloctal(unsigned long long nbr, t_total *e)
 {
 	if (nbr > 7)
@@ -132,4 +131,3 @@ void    f_llint(va_list args, t_total *e)
     ft_putllint((long long)holder, e);
 	e->e = e->e - 4;
 }
-
