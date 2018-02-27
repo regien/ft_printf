@@ -199,6 +199,7 @@ int main (void)
 	printf("weird integers  minus= |% -40d|\n", flags);
 // flag zero interaction with + 
 	printf("weird testing thecero= |%040d|\n", flags);
+	ft_printf("mine testing thecero= |%040d|\n", flags);
 	printf("weird thecero with a+= |%0+40d|\n", flags);
 	printf("weird integers  minus= |%+09d|\n", flags);
 // this flags doesnt works on linux
