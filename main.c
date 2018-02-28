@@ -193,6 +193,7 @@ int main (void)
 //	printf("char vacio = |%c|\n", vacia);
 //	printf("char vacio = |%d|\n", vacia);
 	printf("------------------ Padders Cases -----------------------\n\n");
+	printf("numbers padders =      |%40d|\n", flags);
 	printf("weird integers  minus= |%-40d|\n", flags);
 	printf("weird integers  plus = |%+40d|\n", flags);
 	printf("weird integers  plus = |%+d|\n", flags);
