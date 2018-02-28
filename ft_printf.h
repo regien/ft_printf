@@ -186,4 +186,11 @@ void        f_alignrextra(int *i, char const *str, void* holder, t_total *e);
 void        f_alignr(int *i, char const *str, va_list arg, t_total *e);
 void        f_right(int *i, char const *str, va_list arg, t_total *e);
 
+/*
+**  F SPACES  / HASH
+*/
+
+void        f_space(int *i, const char *str, va_list arg, t_total *e);
+void        f_hash(int *i, const char *str, va_list arg, t_total *e);
+
 #endif

@@ -198,12 +198,20 @@ int main (void)
 
 
 	printf("------------------ Padders Cases -----------------------\n\n");
+
+	printf("space cases = |% 15d|\n", -250);
+	ft_printf("space cases = |% 15d|\n\n", -250);
+
 	printf("numbers padders =      |%40d|\n", flags);
 	ft_printf("numbers padders =      |%40d|\n", flags);
 	printf("hexadecimalpadder = |%40x|\n", rngesus);
 	ft_printf("hexadecimalpadder = |%40x|\n", rngesus);
 	printf("hexadecimalpadder = |%40X|\n", rngesus);
 	ft_printf("hexadecimalpadder = |%40X|\n", rngesus);
+	printf("hexadecimal hash = |%#X|\n", rngesus);
+	ft_printf("hexadecimal hash = |%#X|\n", rngesus);
+	printf("hexadecimal hash = |%#x|\n", rngesus);
+	ft_printf("hexadecimal hash = |%#x|\n", rngesus);
 	printf("octal = |%40o|\n", rngesus);
 	ft_printf("octal = |%40o|\n", rngesus);
 	printf("unsigned shit = |%40u|\n", rngesus);
