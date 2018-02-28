@@ -119,8 +119,11 @@ void		ft_putnbrcont(long long nbr, t_total *e)
 // PUTNBR BASE
 // refactorize it wit everything that is above in order to shorten the code
 
-char	hexlen[] = "0123456789abcdef";
+//char	hexlen[] = "0123456789abcdef";
 //char	caphexstr[] = "0123456789ABCDEF";
+
+
+//i believe that this thing is definetely not in base
 
 void		ft_putnbrbase(long long nbr, int base, t_total *e)
 {

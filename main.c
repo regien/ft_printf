@@ -192,8 +192,28 @@ int main (void)
 
 //	printf("char vacio = |%c|\n", vacia);
 //	printf("char vacio = |%d|\n", vacia);
+
+	unsigned int 		rngesus = 250;
+	char				*roberto = "Lolapalloza";
+
+
 	printf("------------------ Padders Cases -----------------------\n\n");
 	printf("numbers padders =      |%40d|\n", flags);
+	ft_printf("numbers padders =      |%40d|\n", flags);
+	printf("hexadecimalpadder = |%40x|\n", rngesus);
+	ft_printf("hexadecimalpadder = |%40x|\n", rngesus);
+	printf("hexadecimalpadder = |%40X|\n", rngesus);
+	ft_printf("hexadecimalpadder = |%40X|\n", rngesus);
+	printf("octal = |%40o|\n", rngesus);
+	ft_printf("octal = |%40o|\n", rngesus);
+	printf("unsigned shit = |%40u|\n", rngesus);
+	ft_printf("unsigned shit = |%40u|\n", rngesus);
+	printf("pointer address = |%40p|\n", roberto);
+	ft_printf("pointer address = |%40p|\n", roberto);
+	printf("caracter = |%40c|\n", 'a');
+	ft_printf("caracter = |%40c|\n", 'a');
+	printf("caracter %% = |%40%|\n");
+	ft_printf("caracter %% = |%40%|\n");
 	printf("weird integers  minus= |%-40d|\n", flags);
 	printf("weird integers  plus = |%+40d|\n", flags);
 	printf("weird integers  plus = |%+d|\n", flags);

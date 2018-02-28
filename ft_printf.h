@@ -174,4 +174,16 @@ void    f_putzeros(t_total *e, int size);
 void    f_zeroleft(int *i, const char *str, va_list arg, t_total *e);
 void    f_zero(int *i, char const *str, va_list arg, t_total *e);
 
+/*
+**  J NUMBERS
+*/
+
+int    len_unsignumber(unsigned int nbr, int base);
+void        put_paddin(t_total *e, int size);
+void        ft_putunbase(unsigned int nbr, int base, t_total *e);
+void        ft_putcapunbase(unsigned int nbr, int base, t_total *e);
+void        f_alignrextra(int *i, char const *str, void* holder, t_total *e);
+void        f_alignr(int *i, char const *str, va_list arg, t_total *e);
+void        f_right(int *i, char const *str, va_list arg, t_total *e);
+
 #endif
