@@ -136,6 +136,9 @@ void		flags_pen(int *i, char const *str, va_list arg, t_total *e)
 	str[*i] == '#' ? f_hash(i, str, arg, e) : 0;
 	str[*i] > '0' && str[*i] <= '9' ? f_right(i, str, arg, e) : 0;
 
+	str[*i] == '-' ? f_left(i, str, arg, e) : 0;
+	str[*i] == '+' ? f_plus(i, str, arg, e) : 0;
+
 //	str[*i] == '' ? : 0;
 //	str[*i] > '0' && str[*i] <= '9' ? flag() : 0;
 	}

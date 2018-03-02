@@ -193,4 +193,10 @@ void        f_right(int *i, char const *str, va_list arg, t_total *e);
 void        f_space(int *i, const char *str, va_list arg, t_total *e);
 void        f_hash(int *i, const char *str, va_list arg, t_total *e);
 
+/*
+**  LEFT ALIGN
+*/
+
+void    f_left(int *i, const char *str, va_list arg, t_total *e);
+
 #endif

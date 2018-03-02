@@ -58,6 +58,7 @@ int main (void)
 
 //	out = (unsigned long)str;
 
+
 	printf("------------------ Integer Cases -----------------------\n\n");
 	printf("integer = |%i|\n", limit);
 	ft_printf("integer = |%i|\n", limit);
@@ -239,4 +240,14 @@ int main (void)
 	ft_printf("capital U = |%U|\n", (unsigned int)flags);
 	printf("capital D = |%D|\n", (unsigned int)flags);
 	ft_printf("capital D = |%D|\n", (unsigned int)flags);
+
+
+	printf("------------------ EXTRA Padders Cases -----------------------\n\n");
+	printf("pendejada plus test = |%-40d|\n", 155);
+	ft_printf("pendejada plus test = |%-40d|\n", 155);
+	ft_printf("count test = |%d|\n", ft_printf("pendejada plus test = |%-40d|\n", 15));
+	ft_printf("count test = |%d|\n", printf("pendejada plus test = |%-40d|\n", 15));
+//	printf("pendejada plus test = |%+40s|\n", "pendejada");
+//	ft_printf("pendejada plus test = |%+40s|\n", "pendejada");
+
 }
