@@ -39,8 +39,8 @@ int	ft_printf(char const *str, ...)
 
 
 
-
 /*
+
 int main (void)
 {
 	int cac = 5;
