@@ -39,7 +39,7 @@ int	ft_printf(char const *str, ...)
 
 
 
-
+/*
 int main (void)
 {
 	int cac = 5;
@@ -263,3 +263,4 @@ int main (void)
 //	printf("pendejada plus test = |%+40s|\n", "pendejada");
 //	ft_printf("pendejada plus test = |%+40s|\n", "pendejada");
 }
+*/
