@@ -48,7 +48,7 @@ void    f_huint(va_list args, t_total *e)
     unsigned short holder;
 
     holder = (unsigned short)va_arg(args, void*);
-    ft_putnbruint(holder, e);
+    ft_putnbruint((unsigned int)holder, e);
 	e->e = e->e - 3;
 }
 
@@ -56,7 +56,7 @@ void    f_hint(va_list args, t_total *e)
 {
     short   holder;
 
-    holder = (short)va_arg(args, void*);
+    holder = (unsigned short)va_arg(args, void*);
     ft_putnbrcont((long long)holder, e);
 	e->e = e->e - 3;
 }

@@ -41,10 +41,10 @@ void    f_loctal(va_list args, t_total *e)
 
 void    f_luint(va_list args, t_total *e)
 {
-    long    holder;
+    unsigned long    holder;
 
-    holder = (long)va_arg(args, void*);
-    ft_putnbrcont((long long)holder, e);
+    holder = (unsigned long)va_arg(args, void*);
+    ft_putlluint((unsigned long long)holder, e);
 	e->e = e->e - 3;
 }
 
