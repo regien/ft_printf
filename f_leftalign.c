@@ -38,8 +38,8 @@ void    f_plus(int *i, const char *str, va_list arg, t_total *e)
 {
     int holder;
 
-    *i = *i + 1;
-    if (str[*i] == 'd' || str[*i] == 'i')
+//    *i = *i + 1;
+    if (str[*i + 1] == 'd' || str[*i + 1] == 'i')
     {
         holder = va_arg(arg, int);
         if (holder >= 0)
@@ -47,24 +47,27 @@ void    f_plus(int *i, const char *str, va_list arg, t_total *e)
             ft_putchar('+');
             e->e = e->e + 1;
         }
+        *i = *i + 1;
+        ft_putnbrcont((long long)holder, e);
     }
 //  suposse to handle flag zero, not sure about this, let se later REMINDER
     else if (str[*i] == '0')
     {
         e->e = e->e + 1;
-        ft_putchar('0');
+        ft_putchar('+');
+        *i = *i + 1;
         f_zero(i, str, arg, e);
     }
 
-    else if (str[*i] == '-')
+    else if (str[*i + 1] == '-')
         f_left(i, str, arg, e);
-    else if (str[*i] > '0' && str[*i] <= '9')
-        f_right(i, str, arg, e);
-    else
+    else if (str[*i + 1] > '0' || str[*i + 1] <= '9')
     {
-        *i = *i - 1;
-        flags_pen(i, str, arg, e);
+        *i = *i + 1;
+        f_right(i, str, arg, e);
     }
+    else
+        flags_pen(i, str, arg, e);
 }
 
 /*

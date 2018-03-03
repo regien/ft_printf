@@ -17,7 +17,7 @@ void        f_space(int *i, const char *str, va_list arg, t_total *e)
 {
     int    holder;
 
-    if (str[*i] == 'd' || str[*i] == 'i')
+    if (str[*i + 1] == 'd' || str[*i + 1] == 'i')
     {
         holder = va_arg(arg, int);
         if (holder >= 0)
