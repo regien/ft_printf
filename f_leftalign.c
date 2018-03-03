@@ -56,7 +56,7 @@ void    f_plus(int *i, const char *str, va_list arg, t_total *e)
         e->e = e->e + 1;
         ft_putchar('+');
         *i = *i + 1;
-        f_zero(i, str, arg, e);
+        f_zerodebug(i, str, arg, e);
     }
 
     else if (str[*i + 1] == '-')

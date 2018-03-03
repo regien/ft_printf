@@ -91,10 +91,10 @@ void    f_zeroleftdebug(int *i, char const *str, va_list arg, t_total *e)
     void    *holder;
     
     holder = va_arg(arg, void*);
-    e->wd = e->wd -1;
+//    e->wd = e->wd + 1;
     if (str[*i] == 'd' || str[*i] == 'i')
     {
-        f_putzeros(e, len_number((int)holder, 10));
+        f_putzeros(e, (len_number((int)holder, 10) + 1));
         ft_putnbr((int)holder);
     }
 }
@@ -108,5 +108,5 @@ void    f_zerodebug(int *i, char const *str, va_list arg, t_total *e)
                 e->wd = (e->wd * 10) + (str[*i] - '0');
             *i = *i + 1;
         }
-        f_zeroleft(i, str, arg, e);
+        f_zeroleftdebug(i, str, arg, e);
 }
