@@ -44,7 +44,7 @@ void    f_zuint(va_list args, t_total *e)
     size_t   holder;
 
     holder = (size_t)va_arg(args, void*);
-    ft_putnbrcont((long long)holder, e);
+    ft_putlluint((unsigned long long)holder, e);
 	e->e = e->e - 3;
 }
 
