@@ -44,7 +44,7 @@ void		f_octal(va_list arguments, t_total *e)
 
 void		ft_putnbroct(unsigned int hold, t_total *e)
 {
-	if (hold >= 10)
+	if (hold >= 8)
 	{
 		ft_putnbroct(hold / 8, e);
 		ft_putnbroct(hold % 8, e);
@@ -52,7 +52,7 @@ void		ft_putnbroct(unsigned int hold, t_total *e)
 	else
 	{
 		e->e = e->e + 1;
-		ft_putchar(hold + '0');
+		ft_putchar(hexstr[hold]);
 	}
 }
 

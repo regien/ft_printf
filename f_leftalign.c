@@ -51,7 +51,7 @@ void    f_plus(int *i, const char *str, va_list arg, t_total *e)
         ft_putnbrcont((long long)holder, e);
     }
 //  suposse to handle flag zero, not sure about this, let se later REMINDER
-    else if (str[*i] == '0')
+    else if (str[*i + 1] == '0')
     {
         e->e = e->e + 1;
         ft_putchar('+');
@@ -92,6 +92,8 @@ void    f_left(int *i, const char *str, va_list arg, t_total *e)
         e->e = e->e + 1;
         *i = *i + 1;
     }
+// test only
+    e->e = e->e + 1;
     *i = *i - 1;
     flags_pen(i, str, arg, e);
 // actual len and then check if its okay
