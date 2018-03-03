@@ -37,6 +37,8 @@ int	ft_printf(char const *str, ...)
 	return (i + e);
 }
 
+
+/*
 int main (void)
 {
 	int cac = 5;
@@ -247,7 +249,16 @@ int main (void)
 	ft_printf("pendejada plus test = |%-40d|\n", 155);
 	ft_printf("count test = |%d|\n", ft_printf("pendejada plus test = |%-40d|\n", 15));
 	ft_printf("count test = |%d|\n", printf("pendejada plus test = |%-40d|\n", 15));
+
+	printf("------------------ EXTRA Padders Cases -----------------------\n\n");
+
+	printf("hexadecimal plus = |%+40x|\n", rngesus);
+	ft_printf("hexadecimal plus = |%+40x|\n", rngesus);
+
+
 //	printf("pendejada plus test = |%+40s|\n", "pendejada");
 //	ft_printf("pendejada plus test = |%+40s|\n", "pendejada");
 
 }
+
+*/

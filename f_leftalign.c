@@ -33,10 +33,12 @@ void        put_paddin(t_total *e, int size)
 */
 
 
+// norm por dos lineas
 void    f_plus(int *i, const char *str, va_list arg, t_total *e)
 {
     int holder;
 
+    *i = *i + 1;
     if (str[*i] == 'd' || str[*i] == 'i')
     {
         holder = va_arg(arg, int);
@@ -46,10 +48,23 @@ void    f_plus(int *i, const char *str, va_list arg, t_total *e)
             e->e = e->e + 1;
         }
     }
-    
+//  suposse to handle flag zero, not sure about this, let se later REMINDER
+    else if (str[*i] == '0')
+    {
+        e->e = e->e + 1;
+        ft_putchar('0');
+        f_zero(i, str, arg, e);
+    }
 
-
-    if ()
+    else if (str[*i] == '-')
+        f_left(i, str, arg, e);
+    else if (str[*i] > '0' && str[*i] <= '9')
+        f_right(i, str, arg, e);
+    else
+    {
+        *i = *i - 1;
+        flags_pen(i, str, arg, e);
+    }
 }
 
 /*
