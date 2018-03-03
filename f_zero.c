@@ -88,14 +88,14 @@ void    f_zero(int *i, char const *str, va_list arg, t_total *e)
 
 void    f_zeroleftdebug(int *i, char const *str, va_list arg, t_total *e)
 {
-    void    *holder;
+    int    holder;
     
-    holder = va_arg(arg, void*);
+    holder = va_arg(arg, int);
 //    e->wd = e->wd + 1;
     if (str[*i] == 'd' || str[*i] == 'i')
     {
-        f_putzeros(e, (len_number((int)holder, 10) + 1));
-        ft_putnbr((int)holder);
+        f_putzeros(e, (len_number(holder, 10) + 1));
+        ft_putnbr(holder);
     }
 }
 
