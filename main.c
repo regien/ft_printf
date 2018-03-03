@@ -37,8 +37,10 @@ int	ft_printf(char const *str, ...)
 	return (i + e);
 }
 
-/*
 
+
+
+/*
 int main (void)
 {
 	int cac = 5;
@@ -254,6 +256,9 @@ int main (void)
 
 	printf("hexadecimal plus = |%+40x|\n", rngesus);
 	ft_printf("hexadecimal plus = |%+40x|\n", rngesus);
+
+	printf("edge case plus and cero = |%+04d|\n", 42);
+	ft_printf("edge case plus and cero = |%+04d|\n", 42);
 
 
 //	printf("pendejada plus test = |%+40s|\n", "pendejada");

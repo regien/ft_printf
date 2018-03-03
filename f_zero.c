@@ -55,6 +55,7 @@ void    f_putzeros(t_total *e, int size)
     }
 }
 
+/*
 void    f_zeroleft(int *i, const char *str, va_list arg, t_total *e)
 {
     void    *holder;
@@ -85,8 +86,8 @@ void    f_zero(int *i, char const *str, va_list arg, t_total *e)
     }
     f_zeroleft(i, str, arg, e);
 }
-
-void    f_zeroleftdebug(int *i, char const *str, va_list arg, t_total *e)
+*/
+void    f_zeroleft(int *i, char const *str, va_list arg, t_total *e)
 {
     void    *holder;
     
@@ -95,11 +96,11 @@ void    f_zeroleftdebug(int *i, char const *str, va_list arg, t_total *e)
     if (str[*i] == 'd' || str[*i] == 'i')
     {
         f_putzeros(e, len_number((int)holder, 10));
-        ft_putnbr(holder);
+        ft_putnbr((int)holder);
     }
 }
 
-void    f_zerodebug(int *i, char const *str, va_list arg, t_total *e)
+void    f_zero(int *i, char const *str, va_list arg, t_total *e)
 {
         e->wd = 0;
         while (str[*i] >= '0' && str[*i] <= '9')
