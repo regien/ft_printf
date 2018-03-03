@@ -124,9 +124,6 @@ void        f_alignr(int *i, char const *str, va_list arg, t_total *e)
 
 void        f_right(int *i, char const *str, va_list arg, t_total *e)
 {
-    int     count;
-    
-    count = 0;
     e->wd = 0;
     while (str[*i] >= '0' && str[*i] <= '9')
     {

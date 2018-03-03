@@ -69,6 +69,8 @@ void    f_zeroleft(int *i, const char *str, va_list arg, t_total *e)
     }
 }
 
+
+
 void    f_zero(int *i, char const *str, va_list arg, t_total *e)
 {
 
@@ -82,4 +84,29 @@ void    f_zero(int *i, char const *str, va_list arg, t_total *e)
         *i += 1;
     }
     f_zeroleft(i, str, arg, e);
+}
+
+void    f_zeroleftdebug(int *i, char const *str, va_list arg, t_total *e)
+{
+    void    *holder;
+    
+    holder = va_arg(arg, void*);
+    e->wd = e->wd -1;
+    if (str[*i] == 'd' || str[*i] == 'i')
+    {
+        f_putzeros(e, len_number((int)holder, 10));
+        ft_putnbrcont((long long)holder, e);
+    }
+}
+
+void    f_zerodebug(int *i, char const *str, va_list arg, t_total *e)
+{
+        e->wd = 0;
+        while (str[*i] >= '0' && str[*i] <= '9')
+        {
+            if (str[*i] >= '0' && str[*i] <= '9')
+                e->wd = (e->wd * 10) + (str[*i] - '0');
+            *i = *i + 1;
+        }
+        f_zeroleft(i, str, arg, e);
 }

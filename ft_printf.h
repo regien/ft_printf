@@ -174,6 +174,8 @@ void    f_putzeros(t_total *e, int size);
 void    f_zeroleft(int *i, const char *str, va_list arg, t_total *e);
 void    f_zero(int *i, char const *str, va_list arg, t_total *e);
 
+void    f_zeroleftdebug(int *i, char const *str, va_list arg, t_total *e);
+void    f_zerodebug(int *i, char const *str, va_list arg, t_total *e);
 /*
 **  J NUMBERS
 */
