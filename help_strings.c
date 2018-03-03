@@ -98,11 +98,11 @@ void	f_char(va_list arguments, t_total *e)
 {
 	char	hold;
 
-	hold = va_arg(arguments, int);
+	hold = (char)va_arg(arguments, int);
 	ft_putchar(hold);
-	if (hold <= 0)
-		e->e = ((e->e) - 2);
-	else
+//	if (hold <= 0)
+//		e->e = ((e->e) - 2);
+//	else
 		e->e = ((e->e + 1) - 2);
 }
 // 			single  %
@@ -119,7 +119,7 @@ void	f_str(va_list arguments, t_total *e)
 {
 	char *str;
 
-	str = va_arg(arguments, char*);
+	str = (char *)va_arg(arguments, char*);
 	print_str(str, e);
 }
 
@@ -164,7 +164,7 @@ void	ft_putstrwide(wchar_t *str, t_total *e)
 		i = -1;
 		while (str[++i])
 		{
-			ft_putchar(str[i]);
+			write(1, &str[i], 1);
 			e->e = e->e + 1;
 		}
 }
