@@ -95,7 +95,7 @@ void    f_zeroleftdebug(int *i, char const *str, va_list arg, t_total *e)
     if (str[*i] == 'd' || str[*i] == 'i')
     {
         f_putzeros(e, len_number((int)holder, 10));
-        ft_putnbrcont((long long)holder, e);
+        ft_putnbr(holder);
     }
 }
 
