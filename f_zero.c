@@ -55,6 +55,34 @@ void    f_putzeros(t_total *e, int size)
     }
 }
 
+// TEST FUNCTION ONLY
+void    ft_putintcont(int n, t_total *e)
+{
+	if (n < 0)
+	{
+		e->e = e->e + 1;
+		ft_putchar('-');
+		n = -n;
+	}
+	if (n == -2147483648)
+	{
+		ft_putchar('2');
+		n %= 1000000000;
+		n = -n;
+	}
+	if (n >= 10)
+	{
+		ft_putnbrf((n / 10), p);
+		ft_putnbrf((n % 10), p);
+	}
+	else
+	{
+		e->e = e->e + 1;
+		ft_putchar(n + '0');
+	}
+}
+
+
 void    f_zeroleft(int *i, const char *str, va_list arg, t_total *e)
 {
     void    *holder;
@@ -65,7 +93,8 @@ void    f_zeroleft(int *i, const char *str, va_list arg, t_total *e)
     if(str[*i] == 'd' || str[*i] == 'i')
     {
        f_putzeros(e, len_number((int)holder, 10));
-       ft_putnbrbase((long long)holdint, 10, e);
+//       ft_putnbrbase((long long)holdint, 10, e);
+        ft_putintcont(holder, e);
     }
 }
 
