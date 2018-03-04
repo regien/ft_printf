@@ -72,8 +72,8 @@ void    ft_putintcont(int n, t_total *e)
 	}
 	if (n >= 10)
 	{
-		ft_putnbrf((n / 10), p);
-		ft_putnbrf((n % 10), p);
+		ft_putintcont((n / 10), e);
+		ft_putintcont((n % 10), e);
 	}
 	else
 	{
