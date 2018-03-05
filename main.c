@@ -37,7 +37,6 @@ int	ft_printf(char const *str, ...)
 	return (i + e);
 }
 
-
 /*
 int main (void)
 {
@@ -262,5 +261,4 @@ int main (void)
 //	printf("pendejada plus test = |%+40s|\n", "pendejada");
 //	ft_printf("pendejada plus test = |%+40s|\n", "pendejada");
 }
-
 */

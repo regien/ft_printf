@@ -85,16 +85,16 @@ void    ft_putintcont(int n, t_total *e)
 
 void    f_zeroleft(int *i, const char *str, va_list arg, t_total *e)
 {
-    void    *holder;
+//    void    *holder;
     int     holdint;
 
-    holder = va_arg(arg, void*);
-    holdint = (int)holder;
+//    holder = va_arg(arg, void*);
+    holdint = (int)va_arg(arg, int);
     if(str[*i] == 'd' || str[*i] == 'i')
     {
-       f_putzeros(e, len_number((int)holder, 10));
+       f_putzeros(e, len_number((int)holdint, 10));
 //       ft_putnbrbase((long long)holdint, 10, e);
-        ft_putintcont((int)holder, e);
+        ft_putintcont(holdint, e);
     }
 }
 
