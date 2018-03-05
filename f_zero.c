@@ -94,7 +94,7 @@ void    f_zeroleft(int *i, const char *str, va_list arg, t_total *e)
     {
        f_putzeros(e, len_number((int)holder, 10));
 //       ft_putnbrbase((long long)holdint, 10, e);
-        ft_putintcont(holder, e);
+        ft_putintcont((int)holder, e);
     }
 }
 
