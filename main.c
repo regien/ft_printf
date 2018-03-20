@@ -36,8 +36,8 @@ int	ft_printf(char const *str, ...)
 	free(total);
 	return (i + e);
 }
-
 /*
+
 int main (void)
 {
 	int cac = 5;
@@ -256,6 +256,12 @@ int main (void)
 
 	printf("edge case plus and cero = |%+04d|\n", 42);
 	ft_printf("edge case plus and cero = |%+04d|\n", 42);
+	printf("same edge case plus and cero = |%04i|\n", 42);
+	ft_printf("same edge case plus and cero = |%04i|\n", 42);
+
+
+	printf("pendejada = |%0+d|\n", 42);
+	ft_printf("pendejada = |%0+d|\n", 42);
 
 
 //	printf("pendejada plus test = |%+40s|\n", "pendejada");

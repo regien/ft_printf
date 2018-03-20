@@ -105,14 +105,25 @@ void    f_zero(int *i, char const *str, va_list arg, t_total *e)
 
     e->wd = 0;
     // flag + suppose to be here,  i think is not neccesary
-    while (str[*i] >= '0' && str[*i] <= '9')
+    // UPDATE DEBUGGING flag + 
+    if (str[*i + 1 ] == '+')
     {
-        if (str[*i] >= '0' && str[*i] <= '9')
-            e->wd = (e->wd * 10) + (str[*i] - '0');
-//        printf("word count = |%d| \n", e->wd);
-        *i += 1;
+        *i = *i + 1;
+        f_plus(i, str, arg, e);
     }
-    f_zeroleft(i, str, arg, e);
+    else
+    {
+        while (str[*i] >= '0' && str[*i] <= '9')
+        {
+            if (str[*i] >= '0' && str[*i] <= '9')
+                e->wd = (e->wd * 10) + (str[*i] - '0');
+    //        printf("word count = |%d| \n", e->wd);
+            *i += 1;
+        }
+       f_zeroleft(i, str, arg, e);
+    }
+//      changed not staged
+    
 }
 
 void    f_zeroleftdebug(int *i, char const *str, va_list arg, t_total *e)
