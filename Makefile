@@ -6,7 +6,7 @@
 #    By: gmalpart <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/24 21:34:06 by gmalpart          #+#    #+#              #
-#    Updated: 2018/03/24 07:30:25 by gmalpart         ###   ########.fr        #
+#    Updated: 2018/03/24 07:33:29 by gmalpart         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -80,17 +80,14 @@ $(NAME):
 	ar rc $(NAME) $(GENOBJECTS)
 	ranlib $(NAME)
 
+norm:
+	norminette $(GENFILES) includes/ft_printf.h
 
 comp:
-#	gcc $(FLAGSHEAD) $(LIBFTFILES) $(SRCFILES) -o test
 	gcc $(FLAGSHEAD) $(GENFILES) -o test
 
-#clean:
-#	$(LIBC)
-#	/bin/rm -f ()
-
 clean:
-	rm -rf *.o
+	rm -rf $(GENOBJECTS)
 
 fclean: clean
 	rm -rf $(NAME)
