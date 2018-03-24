@@ -6,12 +6,13 @@
 /*   By: gmalpart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/24 21:10:39 by gmalpart          #+#    #+#             */
-/*   Updated: 2018/02/19 18:19:32 by regien           ###   ########.fr       */
+/*   Updated: 2018/03/24 05:15:24 by gmalpart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdio.h>
+
 int	ft_printf(char const *str, ...)
 {
 	int		i;
@@ -36,6 +37,8 @@ int	ft_printf(char const *str, ...)
 	free(total);
 	return (i + e);
 }
+
+
 /*
 
 int main (void)
@@ -263,8 +266,15 @@ int main (void)
 	printf("pendejada = |%0+d|\n", 42);
 	ft_printf("pendejada = |%0+d|\n", 42);
 
+	printf("------------------ EXTRA Padders Cases -----------------------\n\n");
+
+	// print null
+	ft_printf("%ls", NULL);
+	printf("%ls", NULL);
 
 //	printf("pendejada plus test = |%+40s|\n", "pendejada");
 //	ft_printf("pendejada plus test = |%+40s|\n", "pendejada");
+//
+//
 }
 */

@@ -6,41 +6,11 @@
 /*   By: gmalpart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/27 17:00:02 by gmalpart          #+#    #+#             */
-/*   Updated: 2018/01/29 15:35:51 by gmalpart         ###   ########.fr       */
+/*   Updated: 2018/03/24 04:08:23 by gmalpart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-/*
-** INTEGERS
-** %i / %d these are integers as well
-*/
-
-
-/*
-void		f_doub(va_list arguments, int *e)
-{
-	double	nbr;
-	long long	hold;
-
-	nbr = va_arg(arguments, double);
-	hold = (long long)nbr;
-	ft_putnbrcont(nbr, e);
-	*e = *e - 2;
-}
-*/
-
-// %o - OCTAL cases
-
-void		f_octal(va_list arguments, t_total *e)
-{
-	unsigned int	hold;
-
-	hold = va_arg(arguments, unsigned int);
-	ft_putnbroct(hold, e);
-	e->e = e->e - 2;
-}
 
 void		ft_putnbroct(unsigned int hold, t_total *e)
 {
@@ -56,17 +26,6 @@ void		ft_putnbroct(unsigned int hold, t_total *e)
 	}
 }
 
-// UITENGERS cases
-
-void		f_uint(va_list arguments, t_total *e)
-{
-	unsigned int	nbr;
-
-	nbr = va_arg(arguments, unsigned int);
-	ft_putnbruint(nbr, e);
-	e->e = e->e - 2;
-}
-
 void		ft_putnbruint(unsigned int nbr, t_total *e)
 {
 	if (nbr >= 10)
@@ -79,19 +38,6 @@ void		ft_putnbruint(unsigned int nbr, t_total *e)
 		e->e = e->e + 1;
 		ft_putchar(nbr + '0');
 	}
-}
-
-// INTEGERS cases
-
-void		f_int(va_list args, t_total *e)
-{
-	int	nbr;
-	long long hold;
-	
-	nbr = va_arg(args, int);
-	hold = (long long)nbr;
-	ft_putnbrcont(nbr, e);
-	e->e = e->e - 2;
 }
 
 void		ft_putnbrcont(long long nbr, t_total *e)
@@ -114,16 +60,9 @@ void		ft_putnbrcont(long long nbr, t_total *e)
 	}
 }
 
-
-
-// PUTNBR BASE
-// refactorize it wit everything that is above in order to shorten the code
-
-//char	hexlen[] = "0123456789abcdef";
-//char	caphexstr[] = "0123456789ABCDEF";
-
-
-//i believe that this thing is definetely not in base
+/*
+** Base solution for integers.
+*/
 
 void		ft_putnbrbase(long long nbr, int base, t_total *e)
 {

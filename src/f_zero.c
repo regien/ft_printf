@@ -6,7 +6,7 @@
 /*   By: gmalpart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/23 20:54:40 by gmalpart          #+#    #+#             */
-/*   Updated: 2018/02/23 20:54:47 by gmalpart         ###   ########.fr       */
+/*   Updated: 2018/03/24 05:15:00 by gmalpart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /*
 **  printing zeros
-**  changing part : relations with flag + it should 
+**  changing part : relations with flag '+' it should
 **  fail with any ohter flag
 */
 
@@ -94,7 +94,9 @@ void    f_zeroleft(int *i, const char *str, va_list arg, t_total *e)
     {
        f_putzeros(e, len_number((int)holdint, 10));
 //       ft_putnbrbase((long long)holdint, 10, e);
-        ft_putintcont(holdint, e);
+//
+//        ft_putintcont(holdint, e);
+		ft_putnbrcont((long long)holdint, e);
     }
 }
 

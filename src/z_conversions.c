@@ -1,58 +1,58 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   j_conversions.c                                    :+:      :+:    :+:   */
+/*   z_conversions.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: regien <gmalpart@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/22 15:47:04 by regien            #+#    #+#             */
-/*   Updated: 2018/02/22 15:47:11 by regien           ###   ########.fr       */
+/*   Created: 2018/02/22 15:09:58 by regien            #+#    #+#             */
+/*   Updated: 2018/03/24 03:51:24 by gmalpart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void    f_jhexa(va_list args, t_total *e)
+void    f_zhexa(va_list args, t_total *e)
 {
-    uintmax_t      holder;
+    size_t      holder;
 
-    holder = (uintmax_t)va_arg(args, void*);
+    holder = (size_t)va_arg(args, void*);
 	print_hexa((unsigned int)holder, e);
 	e->e = e->e - 3;
 }
 
-void    f_jhexacap(va_list args, t_total *e)
+void    f_zhexacap(va_list args, t_total *e)
 {
-	uintmax_t  holder;
+	size_t  holder;
 
-    holder = (uintmax_t)va_arg(args, void*);
+    holder = (size_t)va_arg(args, void*);
     print_caphexa((unsigned int)holder, e);
 	e->e = e->e - 3;
 }
 
-void    f_joctal(va_list args, t_total *e)
+void    f_zoctal(va_list args, t_total *e)
 {
-    uintmax_t  holder;
+    size_t  holder;
     
-    holder = (uintmax_t)va_arg(args, void*);
+    holder = (size_t)va_arg(args, void*);
     ft_putnbroct((unsigned int)holder, e);
 	e->e = e->e - 3;
 }
 
-void    f_juint(va_list args, t_total *e)
+void    f_zuint(va_list args, t_total *e)
 {
-    uintmax_t    holder;
+    size_t   holder;
 
-    holder = (uintmax_t)va_arg(args, void*);
+    holder = (size_t)va_arg(args, void*);
     ft_putlluint((unsigned long long)holder, e);
 	e->e = e->e - 3;
 }
 
-void    f_jint(va_list args, t_total *e)
+void    f_zint(va_list args, t_total *e)
 {
-    intmax_t   holder;
+    size_t  holder;
 
-    holder = (intmax_t)va_arg(args, void*);
+    holder = (size_t)va_arg(args, void*);
     ft_putnbrcont((long long)holder, e);
 	e->e = e->e - 3;
 }

@@ -1,1 +1,0 @@
-gcc -g libft/libft.a help_intfloat.c help_strings.c main.c parser.c -o test
