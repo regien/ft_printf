@@ -6,7 +6,7 @@
 /*   By: gmalpart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/24 21:10:39 by gmalpart          #+#    #+#             */
-/*   Updated: 2018/03/24 06:56:50 by gmalpart         ###   ########.fr       */
+/*   Updated: 2018/03/24 07:22:13 by gmalpart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ int	ft_printf(char const *str, ...)
 	free(total);
 	return (i + e);
 }
-
 
 /*
 int main (void)

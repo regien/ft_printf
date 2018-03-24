@@ -6,12 +6,12 @@
 /*   By: gmalpart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/24 21:11:12 by gmalpart          #+#    #+#             */
-/*   Updated: 2018/03/24 06:56:35 by gmalpart         ###   ########.fr       */
+/*   Updated: 2018/03/24 07:11:08 by gmalpart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 # include <unistd.h>
 # include <stdarg.h>
 # include <stdlib.h>
@@ -29,18 +29,20 @@ typedef	struct	s_total
 }				t_total;
 
 /*
- ** MAIN
- */
+** MAIN
+*/
 
 int				ft_printf(char const *str, ...);
 
 /*
- ** PARSER
- */
+** PARSER
+*/
+
 void			flag_parsj(int *i, char const *str, va_list arg, t_total *e);
 void			flags_extra(int *i, char const *str, va_list arg, t_total *e);
 void			flags_pen_2(int *i, char const *str, va_list arg, t_total *e);
-void			flags_pen(int *i, char const *str, va_list arguments, t_total *e);
+void			flags_pen(int *i, char const *str, va_list arguments, \
+				t_total *e);
 
 /*
 ** F_CONVERSIONS
@@ -81,7 +83,6 @@ void			ft_puthhhexacap(unsigned int nbr, t_total *e);
 void			ft_puthhoctal(unsigned int hold, t_total *e);
 void			ft_puthhuint(unsigned int nbr, t_total *e);
 
-
 /*
 **  L_CONVERSIONS
 */
@@ -121,7 +122,6 @@ void			f_zhexacap(va_list args, t_total *e);
 void			f_zoctal(va_list args, t_total *e);
 void			f_zuint(va_list args, t_total *e);
 void			f_zint(va_list args, t_total *e);
-
 
 /*
 ** J_CONVERSIONS
@@ -174,9 +174,11 @@ void			f_per(t_total *e);
 ** HELP_WIDECHAR
 */
 
-void			f_widechar(const char *str, int *i, va_list arguments, t_total *e);
+void			f_widechar(const char *str, int *i, va_list arguments, \
+				t_total *e);
 void			ft_putstrwide(wchar_t *str, t_total *e);
-void			f_widestr(const char *str, int *i, va_list arguments, t_total *e);
+void			f_widestr(const char *str, int *i, va_list arguments, \
+				t_total *e);
 
 /*
 **  J NUMBERS
@@ -191,7 +193,8 @@ void			ft_putcapunbase(unsigned int nbr, int base, t_total *e);
 **  F_ALIGN
 */
 
-void			f_alignrextra(int *i, char const *str, void* holder, t_total *e);
+void			f_alignrextra(int *i, char const *str, void *holder, \
+				t_total *e);
 void			f_alignr(int *i, char const *str, va_list arg, t_total *e);
 void			f_right(int *i, char const *str, va_list arg, t_total *e);
 
@@ -208,7 +211,8 @@ void			f_zero(int *i, char const *str, va_list arg, t_total *e);
 **  F_ZERO_DEBUG
 */
 
-void			f_zeroleftdebug(int *i, char const *str, va_list arg, t_total *e);
+void			f_zeroleftdebug(int *i, char const *str, va_list arg,\
+				t_total *e);
 void			f_zerodebug(int *i, char const *str, va_list arg, t_total *e);
 
 /*

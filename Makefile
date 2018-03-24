@@ -6,18 +6,18 @@
 #    By: gmalpart <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/24 21:34:06 by gmalpart          #+#    #+#              #
-#    Updated: 2018/03/24 06:49:44 by gmalpart         ###   ########.fr        #
+#    Updated: 2018/03/24 07:26:29 by gmalpart         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-#MAKE = make -C
 NAME = libftprintf.a
 LIB = libft/
 CFLAGS = -Wall -Wextra -Werror
 CC = gcc
 HEADER = libft/includes
-
 FLAGSHEAD = -I libft/includes -I includes/
+
+# Only using a few libft functions
 
 FTFILES = ft_memalloc.c \
 		  ft_putnbr.c \
@@ -27,22 +27,12 @@ FTFILES = ft_memalloc.c \
 
 LIBFTFILES = $(addprefix libft/, $(FTFILES))
 
+# MAIN WORK files of the project
+
 FILES = parser.c \
 		f_conversions.c \
-		z_conversions.c \
-		l_conversions.c \
-		ll_conversions.c \
-		ll_helpers.c \
-		h_conversions.c \
-		hh_conversions.c \
-		hh_helpers.c \
-		j_conversions.c \
 		parse_intfloat.c \
-		help_intfloat.c \
 		parser_strings.c \
-		help_strings.c \
-		help_widechar.c \
-		j_numbers.c \
 		f_align.c \
 		f_leftalign.c \
 		f_space.c \
@@ -52,34 +42,48 @@ FILES = parser.c \
 
 SRCFILES = $(addprefix src/, $(FILES))
 
-CFILES =  ./libft/*.c ./*.c
+# CONVERSIONS / MULTICASTING files
 
+CONVERSIONS =	h_conversions.c \
+				hh_conversions.c \
+				j_conversions.c \
+				l_conversions.c \
+				ll_conversions.c \
+				z_conversions.c 
 
-#These options are here in case the lib needs to be recompiled.
-#LIBM, LIBC, LIBF will run rules re, clean and fclean inside the libft folder
-LIBM = $(MAKE) $(LIB) re
-LIBC = $(MAKE) $(LIB) clean
-LIBF = $(MAKE) $(LIB) fclean
+SRCCONVERS = $(addprefix src/conversions/, $(CONVERSIONS))
+
+# FUNCTIONS JUST FOR PRINTING
+
+HELPERS =	j_numbers.c \
+			help_intfloat.c \
+			help_strings.c \
+			help_widechar.c \
+			ll_helpers.c \
+			hh_helpers.c \
+
+SRCHELP = $(addprefix src/helpers/, $(HELPERS))
+
+# Global call to all .c files
+
+GENFILES = $(LIBFTFILES) $(SRCFILES) $(SRCCONVERS) $(SRCHELP)
+
+# Objects transform
+
+REGFILES = $(FTFILES) $(FILES) $(CONVERSIONS)
+GENOBJECTS = $(REGFILES:.c=.o)
 
 all: $(NAME)
 
-#$(NAME):
-#	$(LIBM)
-#	$(CC) $(CFILES) -I. -o test
-
-#$(NAME):
-#	gcc -c -I$(HEADER) $(CFILES)
-#	ar rc $(NAME) *.o
-#	ranlib $(NAME)
-
 $(NAME):
 	gcc -c $(FLAGSHEAD) $(LIBFTFILES) $(SRCFILES)
-	ar rc $(NAME) *.o
+	ar rc $(NAME) $(GENOBJECTS)
 	ranlib $(NAME)
 
 
 comp:
-	gcc $(FLAGSHEAD) $(LIBFTFILES) $(SRCFILES) -o test
+#	gcc $(FLAGSHEAD) $(LIBFTFILES) $(SRCFILES) -o test
+	gcc $(FLAGSHEAD) $(GENFILES) -o test
 
 #clean:
 #	$(LIBC)
