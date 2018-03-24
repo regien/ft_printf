@@ -6,7 +6,7 @@
 #    By: gmalpart <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/24 21:34:06 by gmalpart          #+#    #+#              #
-#    Updated: 2018/03/24 07:26:29 by gmalpart         ###   ########.fr        #
+#    Updated: 2018/03/24 07:30:25 by gmalpart         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,13 +70,13 @@ GENFILES = $(LIBFTFILES) $(SRCFILES) $(SRCCONVERS) $(SRCHELP)
 
 # Objects transform
 
-REGFILES = $(FTFILES) $(FILES) $(CONVERSIONS)
+REGFILES = $(FTFILES) $(FILES) $(CONVERSIONS) $(HELPERS)
 GENOBJECTS = $(REGFILES:.c=.o)
 
 all: $(NAME)
 
 $(NAME):
-	gcc -c $(FLAGSHEAD) $(LIBFTFILES) $(SRCFILES)
+	gcc -c $(FLAGSHEAD) $(GENFILES)
 	ar rc $(NAME) $(GENOBJECTS)
 	ranlib $(NAME)
 
