@@ -6,7 +6,7 @@
 /*   By: gmalpart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/23 20:54:40 by gmalpart          #+#    #+#             */
-/*   Updated: 2018/03/24 05:15:00 by gmalpart         ###   ########.fr       */
+/*   Updated: 2018/03/24 05:18:19 by gmalpart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ void    f_putzeros(t_total *e, int size)
 }
 
 // TEST FUNCTION ONLY
+
+/*
 void    ft_putintcont(int n, t_total *e)
 {
 	if (n < 0)
@@ -80,7 +82,7 @@ void    ft_putintcont(int n, t_total *e)
 		e->e = e->e + 1;
 		ft_putchar(n + '0');
 	}
-}
+}*/
 
 
 void    f_zeroleft(int *i, const char *str, va_list arg, t_total *e)

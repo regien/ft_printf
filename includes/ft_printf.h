@@ -6,7 +6,7 @@
 /*   By: gmalpart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/24 21:11:12 by gmalpart          #+#    #+#             */
-/*   Updated: 2018/03/24 04:42:19 by gmalpart         ###   ########.fr       */
+/*   Updated: 2018/03/24 05:18:08 by gmalpart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -209,7 +209,7 @@ void			f_putzeros(t_total *e, int size);
 void			f_zeroleft(int *i, const char *str, va_list arg, t_total *e);
 void			f_zero(int *i, char const *str, va_list arg, t_total *e);
 
-void			ft_putintcont(int n, t_total *e);
+//void			ft_putintcont(int n, t_total *e);
 
 
 void			f_zeroleftdebug(int *i, char const *str, va_list arg, t_total *e);
