@@ -6,7 +6,7 @@
 #    By: gmalpart <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/24 21:34:06 by gmalpart          #+#    #+#              #
-#    Updated: 2018/03/24 05:14:55 by gmalpart         ###   ########.fr        #
+#    Updated: 2018/03/24 06:49:44 by gmalpart         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,8 @@ FILES = parser.c \
 		f_leftalign.c \
 		f_space.c \
 		f_zero.c \
-		main.c 
+		f_zero_debug.c \
+		printf.c 
 
 SRCFILES = $(addprefix src/, $(FILES))
 

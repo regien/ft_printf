@@ -6,7 +6,7 @@
 /*   By: gmalpart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/24 04:08:50 by gmalpart          #+#    #+#             */
-/*   Updated: 2018/03/24 04:14:48 by gmalpart         ###   ########.fr       */
+/*   Updated: 2018/03/24 06:48:27 by gmalpart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	f_caphexa(va_list arguments, t_total *e)
 
 void	f_pointadrs(va_list arguments, t_total *e)
 {
-	void	*out;
+	void			*out;
 	unsigned long	adr;
 
 	out = va_arg(arguments, void*);

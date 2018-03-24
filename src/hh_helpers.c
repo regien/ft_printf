@@ -6,12 +6,11 @@
 /*   By: gmalpart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/24 02:49:00 by gmalpart          #+#    #+#             */
-/*   Updated: 2018/03/24 03:34:32 by gmalpart         ###   ########.fr       */
+/*   Updated: 2018/03/24 06:47:08 by gmalpart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
 
 void	ft_puthhhexa(unsigned int nbr, t_total *e)
 {
@@ -23,7 +22,7 @@ void	ft_puthhhexa(unsigned int nbr, t_total *e)
 	else
 	{
 		e->e = e->e + 1;
-		ft_putchar(hexstr[nbr]);
+		ft_putchar(g_hexstr[nbr]);
 	}
 }
 
@@ -37,11 +36,11 @@ void	ft_puthhhexacap(unsigned int nbr, t_total *e)
 	else
 	{
 		e->e = e->e + 1;
-		ft_putchar(caphexstr[nbr]);
+		ft_putchar(g_caphexstr[nbr]);
 	}
 }
 
-void		ft_puthhoctal(unsigned int hold, t_total *e)
+void	ft_puthhoctal(unsigned int hold, t_total *e)
 {
 	if (hold > 7)
 	{
@@ -55,11 +54,11 @@ void		ft_puthhoctal(unsigned int hold, t_total *e)
 	}
 }
 
-void		ft_puthhuint(unsigned int nbr, t_total *e)
+void	ft_puthhuint(unsigned int nbr, t_total *e)
 {
 	if (nbr >= 10)
 	{
-        ft_puthhuint(nbr / 10, e);
+		ft_puthhuint(nbr / 10, e);
 		ft_puthhuint(nbr % 10, e);
 	}
 	else
@@ -68,4 +67,3 @@ void		ft_puthhuint(unsigned int nbr, t_total *e)
 		ft_putchar(nbr + '0');
 	}
 }
-

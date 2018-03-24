@@ -6,13 +6,13 @@
 /*   By: regien <gmalpart@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/27 17:03:24 by regien            #+#    #+#             */
-/*   Updated: 2018/03/24 02:57:17 by gmalpart         ###   ########.fr       */
+/*   Updated: 2018/03/24 06:45:20 by gmalpart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int    len_unsignumber(unsigned int nbr, int base)
+int		len_unsignumber(unsigned int nbr, int base)
 {
 	int holder;
 
@@ -22,7 +22,7 @@ int    len_unsignumber(unsigned int nbr, int base)
 	return (holder);
 }
 
-void        put_paddin(t_total *e, int size)
+void	put_paddin(t_total *e, int size)
 {
 	int vaina;
 
@@ -38,7 +38,7 @@ void        put_paddin(t_total *e, int size)
 	}
 }
 
-void        ft_putunbase(unsigned int nbr, int base, t_total *e)
+void	ft_putunbase(unsigned int nbr, int base, t_total *e)
 {
 	if (nbr >= base)
 	{
@@ -48,11 +48,11 @@ void        ft_putunbase(unsigned int nbr, int base, t_total *e)
 	if (nbr < base)
 	{
 		e->e = e->e + 1;
-		ft_putchar(hexstr[nbr]);
+		ft_putchar(g_hexstr[nbr]);
 	}
 }
 
-void        ft_putcapunbase(unsigned int nbr, int base, t_total *e)
+void	ft_putcapunbase(unsigned int nbr, int base, t_total *e)
 {
 	if (nbr >= base)
 	{
@@ -62,6 +62,6 @@ void        ft_putcapunbase(unsigned int nbr, int base, t_total *e)
 	if (nbr < base)
 	{
 		e->e = e->e + 1;
-		ft_putchar(caphexstr[nbr]);
+		ft_putchar(g_caphexstr[nbr]);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: gmalpart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/27 17:00:02 by gmalpart          #+#    #+#             */
-/*   Updated: 2018/03/24 04:08:23 by gmalpart         ###   ########.fr       */
+/*   Updated: 2018/03/24 06:47:39 by gmalpart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void		ft_putnbroct(unsigned int hold, t_total *e)
 	else
 	{
 		e->e = e->e + 1;
-		ft_putchar(hexstr[hold]);
+		ft_putchar(g_hexstr[hold]);
 	}
 }
 
@@ -80,6 +80,6 @@ void		ft_putnbrbase(long long nbr, int base, t_total *e)
 	if (nbr < 10)
 	{
 		e->e = e->e + 1;
-		ft_putchar(hexstr[nbr]);
+		ft_putchar(g_hexstr[nbr]);
 	}
 }

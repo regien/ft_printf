@@ -6,7 +6,7 @@
 /*   By: gmalpart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/24 21:11:12 by gmalpart          #+#    #+#             */
-/*   Updated: 2018/03/24 05:18:08 by gmalpart         ###   ########.fr       */
+/*   Updated: 2018/03/24 06:56:35 by gmalpart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 # include <wchar.h>
 # include <stdint.h>
 
-extern char	hexstr[];
-extern char	caphexstr[];
+extern const char	g_hexstr[];
+extern const char	g_caphexstr[];
 
 typedef	struct	s_total
 {
@@ -195,37 +195,34 @@ void			f_alignrextra(int *i, char const *str, void* holder, t_total *e);
 void			f_alignr(int *i, char const *str, va_list arg, t_total *e);
 void			f_right(int *i, char const *str, va_list arg, t_total *e);
 
-
-
-
-
-
 /*
- **  PADDERS
- */
+**  F_ZERO
+*/
 
 int				len_number(int nbr, int base);
 void			f_putzeros(t_total *e, int size);
 void			f_zeroleft(int *i, const char *str, va_list arg, t_total *e);
 void			f_zero(int *i, char const *str, va_list arg, t_total *e);
 
-//void			ft_putintcont(int n, t_total *e);
-
+/*
+**  F_ZERO_DEBUG
+*/
 
 void			f_zeroleftdebug(int *i, char const *str, va_list arg, t_total *e);
 void			f_zerodebug(int *i, char const *str, va_list arg, t_total *e);
 
 /*
- **  F SPACES  / HASH
- */
+**  F SPACES  / HASH
+*/
 
 void			f_space(int *i, const char *str, va_list arg, t_total *e);
 void			f_hash(int *i, const char *str, va_list arg, t_total *e);
 
 /*
- **  LEFT ALIGN
- */
+**  LEFT ALIGN
+*/
 
+void			f_plus_ints(int *i, const char *str, va_list arg, t_total *e);
 void			f_plus(int *i, const char *str, va_list arg, t_total *e);
 void			f_left(int *i, const char *str, va_list arg, t_total *e);
 

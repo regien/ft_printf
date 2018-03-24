@@ -6,14 +6,14 @@
 /*   By: gmalpart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/28 00:06:40 by gmalpart          #+#    #+#             */
-/*   Updated: 2018/03/24 04:31:43 by gmalpart         ###   ########.fr       */
+/*   Updated: 2018/03/24 06:46:04 by gmalpart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	hexstr[] = "0123456789abcdef";
-char	caphexstr[] = "0123456789ABCDEF";
+const char g_hexstr[] = "0123456789abcdef";
+const char g_caphexstr[] = "0123456789ABCDEF";
 
 void	print_hexa(unsigned int nbr, t_total *e)
 {
@@ -25,7 +25,7 @@ void	print_hexa(unsigned int nbr, t_total *e)
 	else
 	{
 		e->e = e->e + 1;
-		ft_putchar(hexstr[nbr]);
+		ft_putchar(g_hexstr[nbr]);
 	}
 }
 
@@ -39,13 +39,13 @@ void	print_caphexa(unsigned int nbr, t_total *e)
 	else
 	{
 		e->e = e->e + 1;
-		ft_putchar(caphexstr[nbr]);
+		ft_putchar(g_caphexstr[nbr]);
 	}
 }
 
 void	print_address(unsigned long adr, t_total *e)
 {
-	if(adr > 15)
+	if (adr > 15)
 	{
 		print_address(adr / 16, e);
 		print_address(adr % 16, e);
@@ -53,7 +53,7 @@ void	print_address(unsigned long adr, t_total *e)
 	else
 	{
 		e->e = e->e + 1;
-		ft_putchar(hexstr[adr]);
+		ft_putchar(g_hexstr[adr]);
 	}
 }
 

@@ -6,15 +6,15 @@
 /*   By: gmalpart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/24 02:53:36 by gmalpart          #+#    #+#             */
-/*   Updated: 2018/03/24 04:40:44 by gmalpart         ###   ########.fr       */
+/*   Updated: 2018/03/24 05:50:58 by gmalpart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void        f_alignrextra(int *i, char const *str, void* holder, t_total *e)
+void	f_alignrextra(int *i, char const *str, void *holder, t_total *e)
 {
-	unsigned long       addr;
+	unsigned long	addr;
 
 	if (str[*i] == 's')
 	{
@@ -38,10 +38,10 @@ void        f_alignrextra(int *i, char const *str, void* holder, t_total *e)
 	}
 }
 
-void        f_alignr(int *i, char const *str, va_list arg, t_total *e)
+void	f_alignr(int *i, char const *str, va_list arg, t_total *e)
 {
-	void    *holder;
-	int     holdint;
+	void	*holder;
+	int		holdint;
 
 	holdint = 0;
 	holder = va_arg(arg, void*);
@@ -66,7 +66,7 @@ void        f_alignr(int *i, char const *str, va_list arg, t_total *e)
 	f_alignrextra(i, str, holder, e);
 }
 
-void        f_right(int *i, char const *str, va_list arg, t_total *e)
+void	f_right(int *i, char const *str, va_list arg, t_total *e)
 {
 	e->wd = 0;
 	while (str[*i] >= '0' && str[*i] <= '9')

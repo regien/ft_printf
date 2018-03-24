@@ -6,12 +6,11 @@
 /*   By: regien <gmalpart@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/27 13:27:02 by regien            #+#    #+#             */
-/*   Updated: 2018/03/24 03:12:38 by gmalpart         ###   ########.fr       */
+/*   Updated: 2018/03/24 06:01:43 by gmalpart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
 
 void		flag_parsj(int *i, char const *str, va_list arg, t_total *e)
 {
@@ -60,8 +59,8 @@ void		flags_pen(int *i, char const *str, va_list arg, t_total *e)
 	str[*i] == 'p' ? f_pointadrs(arg, e) : 0;
 	str[*i] == 'z' ? flag_parsz(i, str, arg, e) : 0;
 	str[*i] == 'j' ? flag_parsj(i, str, arg, e) : 0;
-	str[*i] == 'U' ? flags_extra(i, str, arg, e) : 0 ;
-	str[*i] == 'D' ||  str[*i] == 'O' ? flags_extra(i, str, arg, e) : 0;
+	str[*i] == 'U' ? flags_extra(i, str, arg, e) : 0;
+	str[*i] == 'D' || str[*i] == 'O' ? flags_extra(i, str, arg, e) : 0;
 	str[*i] == 'C' || str[*i] == 'S' ? f_widechar(str, i, arg, e) : 0;
 	str[*i] == 'l' && str[*i + 1] == 's' ? f_widestr(str, i, arg, e) : 0;
 	str[*i] == 'l' && str[*i + 1] == 'c' ? f_widechar(str, i, arg, e) : 0;
@@ -70,4 +69,4 @@ void		flags_pen(int *i, char const *str, va_list arg, t_total *e)
 	str[*i] == 'l' && str[*i + 1] != 'l' ? flag_parsl(i, str, arg, e) : 0;
 	str[*i] == 'l' && str[*i + 1] == 'l' ? flag_parsll(i, str, arg, e) : 0;
 	flags_pen_2(i, str, arg, e);
-	}
+}

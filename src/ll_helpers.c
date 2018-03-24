@@ -6,7 +6,7 @@
 /*   By: gmalpart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/24 02:58:18 by gmalpart          #+#    #+#             */
-/*   Updated: 2018/03/24 02:59:20 by gmalpart         ###   ########.fr       */
+/*   Updated: 2018/03/24 06:46:48 by gmalpart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_putllhexa(unsigned long long nbr, t_total *e)
 	else
 	{
 		e->e = e->e + 1;
-		ft_putchar(hexstr[nbr]);
+		ft_putchar(g_hexstr[nbr]);
 	}
 }
 
@@ -36,7 +36,7 @@ void	ft_putllhexacap(unsigned long long nbr, t_total *e)
 	else
 	{
 		e->e = e->e + 1;
-		ft_putchar(caphexstr[nbr]);
+		ft_putchar(g_caphexstr[nbr]);
 	}
 }
 
@@ -50,7 +50,7 @@ void	ft_putlloctal(unsigned long long nbr, t_total *e)
 	else
 	{
 		e->e = e->e + 1;
-		ft_putchar(hexstr[nbr]);
+		ft_putchar(g_hexstr[nbr]);
 	}
 }
 
@@ -64,7 +64,7 @@ void	ft_putlluint(unsigned long long nbr, t_total *e)
 	else
 	{
 		e->e = e->e + 1;
-		ft_putchar(hexstr[nbr]);
+		ft_putchar(g_hexstr[nbr]);
 	}
 }
 
@@ -78,6 +78,6 @@ void	ft_putllint(long long nbr, t_total *e)
 	else
 	{
 		e->e = e->e + 1;
-		ft_putchar(hexstr[nbr]);
+		ft_putchar(g_hexstr[nbr]);
 	}
 }
