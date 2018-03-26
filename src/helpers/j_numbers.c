@@ -6,7 +6,7 @@
 /*   By: regien <gmalpart@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/27 17:03:24 by regien            #+#    #+#             */
-/*   Updated: 2018/03/24 06:45:20 by gmalpart         ###   ########.fr       */
+/*   Updated: 2018/03/26 14:07:21 by gmalpart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	put_paddin(t_total *e, int size)
 	}
 }
 
-void	ft_putunbase(unsigned int nbr, int base, t_total *e)
+void	ft_putunbase(unsigned int nbr, unsigned int base, t_total *e)
 {
 	if (nbr >= base)
 	{
@@ -52,7 +52,7 @@ void	ft_putunbase(unsigned int nbr, int base, t_total *e)
 	}
 }
 
-void	ft_putcapunbase(unsigned int nbr, int base, t_total *e)
+void	ft_putcapunbase(unsigned int nbr, unsigned int base, t_total *e)
 {
 	if (nbr >= base)
 	{

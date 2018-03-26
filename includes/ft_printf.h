@@ -6,7 +6,7 @@
 /*   By: gmalpart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/24 21:11:12 by gmalpart          #+#    #+#             */
-/*   Updated: 2018/03/24 07:11:08 by gmalpart         ###   ########.fr       */
+/*   Updated: 2018/03/26 14:07:44 by gmalpart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -186,8 +186,9 @@ void			f_widestr(const char *str, int *i, va_list arguments, \
 
 int				len_unsignumber(unsigned int nbr, int base);
 void			put_paddin(t_total *e, int size);
-void			ft_putunbase(unsigned int nbr, int base, t_total *e);
-void			ft_putcapunbase(unsigned int nbr, int base, t_total *e);
+void			ft_putunbase(unsigned int nbr, unsigned int base, t_total *e);
+void			ft_putcapunbase(unsigned int nbr, unsigned int base,\
+				t_total *e);
 
 /*
 **  F_ALIGN

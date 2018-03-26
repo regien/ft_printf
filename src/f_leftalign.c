@@ -6,7 +6,7 @@
 /*   By: gmalpart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/01 21:44:35 by gmalpart          #+#    #+#             */
-/*   Updated: 2018/03/24 06:56:33 by gmalpart         ###   ########.fr       */
+/*   Updated: 2018/03/26 14:08:40 by gmalpart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void	f_plus_ints(int *i, const char *str, va_list arg, t_total *e)
 {
 	int	holder;
 
+	(void)str;
 	holder = va_arg(arg, int);
 	if (holder >= 0)
 	{

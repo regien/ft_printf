@@ -6,7 +6,7 @@
 #    By: gmalpart <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/24 21:34:06 by gmalpart          #+#    #+#              #
-#    Updated: 2018/03/24 07:33:29 by gmalpart         ###   ########.fr        #
+#    Updated: 2018/03/26 13:59:21 by gmalpart         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -76,7 +76,7 @@ GENOBJECTS = $(REGFILES:.c=.o)
 all: $(NAME)
 
 $(NAME):
-	gcc -c $(FLAGSHEAD) $(GENFILES)
+	gcc $(CFLAGS) -c $(FLAGSHEAD) $(GENFILES)
 	ar rc $(NAME) $(GENOBJECTS)
 	ranlib $(NAME)
 
